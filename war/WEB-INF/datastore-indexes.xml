@@ -1,6 +1,5 @@
-<!-- Indices written at Mon, 23 May 2011 16:12:33 UTC -->
-
-<datastore-indexes>
+<?xml version="1.0" encoding="utf-8"?>
+<datastore-indexes  autoGenerate="true">
 
     <!-- Used 1 time in query history -->
     <datastore-index kind="WebUser" ancestor="false" source="auto">
