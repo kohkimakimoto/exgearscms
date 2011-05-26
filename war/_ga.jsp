@@ -1,1 +1,1 @@
-// Set Google Analytics Code
+<!-- Set Google Analytics Code -->
