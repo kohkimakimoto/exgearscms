@@ -29,10 +29,10 @@ public class WebUserService {
             validators.required("ユーザIDは必須です。"),
             validators.minlength(4, "ユーザIDは4文字以上100字以内で指定してください。"),
             validators.maxlength(100, "ユーザIDは4文字以上100字以内で指定してください。"),
-            validators.regexp("^admin.*$", "この文字列はユーザIDに使えません。"),
             validators.regexp("^[a-zA-Z0-9][a-zA-Z0-9_]+", "半角英数とアンダースコアで指定してください。また先頭にアンダースコアは使えません。")
         );
-
+        
+        
         if (webUser.isAuthenticated()) {
             validators.getErrors().put("uid", "このGoogleアカウントはすでに登録されています。");
             return false;
@@ -41,6 +41,12 @@ public class WebUserService {
 
         if (!validators.validate()) {
             // Validate errors.
+            return false;
+        }
+        
+        String str = (String)input.get("uid");
+        if (str.startsWith("admin")) {
+            validators.getErrors().put("uid", "このユーザIDは使用できません。");
             return false;
         }
 
