@@ -22,6 +22,8 @@ import com.google.appengine.api.users.UserServiceFactory;
 
 public class UserAuthFilter implements Filter {
 
+    private static Logger logger = Logger.getLogger(UserAuthFilter.class.getName());
+    
     public void destroy() {
 
     }

@@ -15,6 +15,7 @@ public class RegisterController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
+        
         UserService userService = UserServiceFactory.getUserService();
         requestScope("logoutUrl", userService.createLogoutURL("/reg/register"));
         requestScope("loginUrl", userService.createLoginURL("/reg/register"));
