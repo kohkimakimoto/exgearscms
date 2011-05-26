@@ -29,6 +29,7 @@
           このサイト自体をExGearsCMSで動かしています。<br />
           開発ブログの掲載とExGearsCMSを利用したゆるーいコミュニティサービスの提供を行っています。<br />
           さくっと使ってみたい人は下のリンクか右のメニューからアカウント登録してみてくださいね。<br />
+          ただしまだ安定していないので、データ消えたりするかも<br />
           <br />
           <a href="/p/terms">利用規約</a><br />
           <a href="/reg/register">アカウント登録</a><br />
@@ -54,7 +55,10 @@
         <div class="section">
           <ul>
             <c:forEach var="article" items="${articleList}" >
-              <li><a href="${article.url}">${article.title}</a></li>
+              <li>
+                (<a href="/${article.webUser.uid}/">${article.webUser.uid}</a>)
+                <a href="${article.url}">${article.title}</a>
+              </li>
             </c:forEach>
           </ul>
         </div>

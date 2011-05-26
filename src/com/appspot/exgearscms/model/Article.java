@@ -131,4 +131,8 @@ public class Article implements Serializable {
     public ModelRef<WebUser> getWebUserRef() {
         return webUserRef;
     }
+
+    public WebUser getWebUser() {
+        return getWebUserRef().getModel();
+    }
 }

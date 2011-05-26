@@ -20,6 +20,23 @@
         </div>
       </div>
     </div>
+
+    <div class="cbox1">
+      <div class="inner">
+        <h2>新着記事。</h2>
+        <div class="section">
+          <ul>
+            <c:forEach var="article" items="${articleList}" >
+              <li>
+                <a href="${article.url}">${article.title}</a>
+              </li>
+            </c:forEach>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
   <div class="content-right">
