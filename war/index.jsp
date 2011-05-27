@@ -3,6 +3,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
+<%@taglib prefix="func" uri="/helper/functions"%>
 <c:import url="/layout/default.jsp">
 <c:param name="title" value="ExGearsCMS - Google App Engineで動作するオープンソースのクラウドCMS -"/>
 <c:param name="content" >
@@ -57,7 +58,7 @@
             <c:forEach var="article" items="${articleList}" >
               <li>
                 (<a href="/${article.webUser.uid}/">${article.webUser.uid}</a>)
-                <a href="${article.url}">${article.title}</a>
+                <a href="${article.url}">${func:truncate(article.title, 100)}</a>
               </li>
             </c:forEach>
           </ul>
@@ -104,7 +105,9 @@
       <div class="inner">
         <ul>
           <c:forEach var="webUser" items="${webUserList}" >
-            <li class="user-uid"><img src="/static/images/icon/user-22x22.png" /><a href="${webUser.url}">${webUser.uid}</a></li>
+            <li class="user-uid">
+              <img src="/static/images/icon/user-22x22.png" /><a href="${webUser.url}">${webUser.uid}</a>
+            </li>
           </c:forEach>
         </ul>
       </div>

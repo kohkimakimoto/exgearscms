@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+
+  <description>ExGears functions library</description>
+  <display-name>Slim3 functions</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>func</short-name>
+  <uri>/helper/functions</uri>
+
+  <function>
+    <description></description>
+    <name>truncate</name>
+    <function-class>com.appspot.exgearscms.helper.Functions</function-class>
+    <function-signature>java.lang.String truncate(java.lang.String, int)</function-signature>
+    <example>
+      ${func:tuncate(param)}
+    </example>
+  </function>
+
+
+
+</taglib>
