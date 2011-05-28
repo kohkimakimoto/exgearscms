@@ -58,8 +58,8 @@
             <c:forEach var="article" items="${articleList}" >
               <li>
                 <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
-                <a href="${article.url}">${func:truncate(article.title, 100)}</a>
-                <div>${func:truncate(article.text, 100)}</div>
+                <a href="${article.url}">${func:truncate(article.title, 100, "...")}</a>
+                <div>${func:truncate(article.text, 100, "...")}</div>
               </li>
             </c:forEach>
           </ul>

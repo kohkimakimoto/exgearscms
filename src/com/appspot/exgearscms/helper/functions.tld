@@ -15,12 +15,10 @@
     <description></description>
     <name>truncate</name>
     <function-class>com.appspot.exgearscms.helper.Functions</function-class>
-    <function-signature>java.lang.String truncate(java.lang.String, int)</function-signature>
+    <function-signature>java.lang.String truncate(java.lang.String, int, java.lang.String)</function-signature>
     <example>
       ${func:tuncate(param)}
     </example>
   </function>
-
-
 
 </taglib>

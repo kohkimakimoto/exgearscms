@@ -2,7 +2,7 @@ package com.appspot.exgearscms.helper;
 
 public class Functions {
 
-    public static String truncate(String input, int length) {
+    public static String truncate(String input, int length, String suffix) {
         if (input == null) {
             return null;
         }
@@ -11,6 +11,7 @@ public class Functions {
             return input;
         }
 
-        return input.substring(0, length);
+        return input.substring(0, length) + suffix;
     }
+
 }

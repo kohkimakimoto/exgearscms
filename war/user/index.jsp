@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="content-left">
-    <div class="cbox1">
+    <div class="cbox2">
       <div class="inner">
         <h2>${f:h(webUser.config.myPageTitle)}</h2>
         <div class="section">
@@ -21,24 +21,19 @@
         </div>
       </div>
     </div>
-
-    <div class="cbox1">
-      <div class="inner">
-        <h2>新着記事。</h2>
-        <div class="section">
-          <ul>
-            <c:forEach var="article" items="${articleList}" >
-              <li>
-                <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
-                <a href="${article.url}">${func:truncate(article.title, 100)}</a>
-                <div>${func:truncate(article.text, 100)}</div>
-              </li>
-            </c:forEach>
-          </ul>
+    <c:forEach var="article" items="${articleList}" >
+      <div class="cbox1">
+        <div class="inner">
+          <h2>${f:h(article.title)}</h2>
+          <div class="section">
+          ${func:truncate(article.text, 100, "...")}
+          <div>
+            <a href="${article.url}">続きを読む</a>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
-
+    </c:forEach>
 
   </div>
 
