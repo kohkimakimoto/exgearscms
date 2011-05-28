@@ -3,6 +3,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
+<%@taglib prefix="func" uri="/helper/functions"%>
 <c:import url="/layout/default.jsp">
 <c:param name="title" value="ExGearsCMS"/>
 <c:param name="content" >
@@ -28,7 +29,9 @@
           <ul>
             <c:forEach var="article" items="${articleList}" >
               <li>
-                <a href="${article.url}">${article.title}</a>
+                <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
+                <a href="${article.url}">${func:truncate(article.title, 100)}</a>
+                <div>${func:truncate(article.text, 100)}</div>
               </li>
             </c:forEach>
           </ul>
@@ -40,15 +43,9 @@
   </div>
 
   <div class="content-right">
-    <div class="cbox1 user-info">
-      <div class="subject">ユーザ情報</div>
-      <div class="inner">
-        <div class="user-uid">
-          <img src="/static/images/icon/user-22x22.png" /><a href="${f:h(webUser.url)}">${f:h(webUser.uid)}</a>
-        </div>
-        ${f:h(webUser.config.profile)}
-      </div>
-    </div>
+    <c:import url="/user/_sidemenu.jsp">
+      <c:param name="webUser" value="${webUser}"/>
+    </c:import>
   </div>
 </c:param>
 </c:import>

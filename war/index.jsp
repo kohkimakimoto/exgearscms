@@ -57,8 +57,9 @@
           <ul>
             <c:forEach var="article" items="${articleList}" >
               <li>
-                (<a href="/${article.webUser.uid}/">${article.webUser.uid}</a>)
+                <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
                 <a href="${article.url}">${func:truncate(article.title, 100)}</a>
+                <div>${func:truncate(article.text, 100)}</div>
               </li>
             </c:forEach>
           </ul>
@@ -70,23 +71,24 @@
 
   <div class="content-right">
     <c:if test="${!user.authenticated}" >
-      <div class="cbox1">
+      <div class="scbox1">
         <div class="inner">
-          <a class="register" href="/reg/register"><img class="hover" src="/static/images/register_button.png" /></a>
+        <div class="subject">はじめてみる？</div>
+          <a class="register" href="/reg/register"><img class="hover" src="/static/default/images/common/register_button.png" /></a>
           <p style="padding: 0 0 10px 0; font-size: 12px;">※ExGearsCMSはGoogleアカウントでユーザ認証をします。ご利用にはGoogleアカウントが必要です。</p>
           <hr style="border-bottom: 4px dotted #e2e2ff; border-top-width: 0; border-left-width: 0; border-right-width: 0; margin: 15px 0; " />
           <p style="padding: 0 0 10px 0; font-size: 12px;">すでに登録済みの方は</p>
-          <a class="register" href="${loginUrl}"><img class="hover" src="/static/images/login_button.png" /></a>
+          <a class="register" href="${loginUrl}"><img class="hover" src="/static/default/images/common/login_button.png" /></a>
           <p style="padding: 0 0 10px 0; font-size: 12px;">※Googleアカウントでログイン。</p>
         </div>
       </div>
     </c:if>
     <c:if test="${user.authenticated}" >
-      <div class="cbox1 user-info">
-        <div class="subject">ユーザメニュー</div>
+      <div class="scbox1 user-info">
         <div class="inner">
+        <div class="subject">ユーザメニュー</div>
           <div class="user-uid">
-            <img src="/static/images/icon/user-22x22.png" /><a href="${f:h(user.url)}">${f:h(user.uid)}</a>
+            <img src="/static/default/images/icon/user-22x22.png" /><a href="${f:h(user.url)}">${f:h(user.uid)}</a>
           </div>
           <div class="user-menu">
             <ul>
@@ -100,13 +102,13 @@
       </div>
     </c:if>
 
-    <div class="cbox1">
-      <div class="subject">新着ユーザ</div>
+    <div class="scbox1">
       <div class="inner">
+        <div class="subject">登録してるユーザさん</div>
         <ul>
           <c:forEach var="webUser" items="${webUserList}" >
             <li class="user-uid">
-              <img src="/static/images/icon/user-22x22.png" /><a href="${webUser.url}">${webUser.uid}</a>
+              <img src="/static/default/images/icon/user-22x22.png" /><a href="${webUser.url}">${webUser.uid}</a>
             </li>
           </c:forEach>
         </ul>

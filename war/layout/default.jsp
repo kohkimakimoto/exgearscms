@@ -8,32 +8,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="keywords" content="Google App Engine,CMS,クラウドCMS,Java" lang="ja" xml:lang="ja" />
 <meta name="description" content="ExGearsCMSはGoogle App Engineで動作するクラウドCMSです。" lang="ja" xml:lang="ja" />
-<link rel="stylesheet" href="/static/css/default.css" type="text/css" media="all" />
-<script type="text/javascript" src="/static/js/jquery-1.5.2.min.js"></script>
-<script type="text/javascript" src="/static/js/jquery-ui-1.8.7.custom.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="/static/js/jquery.plugin.js"></script>
-<script type="text/javascript" src="/static/js/global.js"></script>
+<link rel="stylesheet" href="/static/default/css/default.css" type="text/css" media="all" />
+<script type="text/javascript" src="/static/default/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/static/default/js/jquery-ui-1.8.7.custom.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/default/js/jquery.plugin.js"></script>
+<script type="text/javascript" src="/static/default/js/global.js"></script>
 <title>${param.title}</title>
 <c:import url="/_ga.jsp" />
 </head>
 <body>
 <div class="container">
-  <div class="header"><div class="header-inner">
-    <h1><a href="/"><img src="/static/images/logo.png"></a></h1>
+  <div class="header-wrap"><div class="header">
+    <h1><a href="/"><img src="/static/default/images/common/logo.png" /></a></h1>
+    <p class="desc">- Google App Engineで動作するオープンソースのクラウドCMS -</p>
   </div></div>
-  <div class="content"><div class="content-inner">
+  <div class="content-wrap"><div class="content">
     ${param.content}
     <div style="clear: both;"></div>
   </div></div>
-  <div class="footer"><div class="footer-inner">
-    <p>"ExGearsCMS" developed by kohki makimoto. Powered by Google App Engine for Java.</p>
-    <p>"ExGearsCMS" is a open source software licensed "Apache License 2.0".</p>
-    <p><a href="/p/terms">利用規約</p>
-  </div></div>
 </div>
-
-
-
-
+<div class="footer-wrap"><div class="footer">
+  <p>"ExGearsCMS" developed by kohki makimoto. Powered by Google App Engine for Java.</p>
+  <p>"ExGearsCMS" is a open source software licensed "Apache License 2.0".</p>
+  <p><a href="/p/terms">利用規約</p>
+</div></div>
 </body>
 </html>

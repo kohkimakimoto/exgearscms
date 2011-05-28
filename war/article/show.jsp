@@ -23,15 +23,9 @@
   </div>
 
   <div class="content-right">
-    <div class="cbox1 user-info">
-      <div class="subject">ユーザ情報</div>
-      <div class="inner">
-        <div class="user-uid">
-          <img src="/static/images/icon/user-22x22.png" /><a href="${f:h(webUser.url)}">${f:h(webUser.uid)}</a>
-        </div>
-        ${f:h(webUser.config.profile)}
-      </div>
-    </div>
+    <c:import url="/user/_sidemenu.jsp">
+      <c:param name="webUser" value="${webUser}"/>
+    </c:import>
   </div>
 </c:param>
 </c:import>
