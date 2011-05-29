@@ -21,14 +21,14 @@ border-bottom: 2px dotted #5138BA;}
 h2 {
 color: #555555;
 font-size: 18px;
-margin: 5px 0 10px 0;
+margin: 15px 0 10px 0;
 padding: 2px 0 5px 10px;
 border-bottom: 1px solid #e3e3e3;
 border-left: 10px solid #e3e3e3}
 
 img {border-style:none;}
 a img {border-style:none;}
-p {margin:0; padding: 0;}
+p {margin:0 0 5px 0; padding: 0;}
 a {color: #4444ff;}
 ul.error li {
 color: #ff0000;

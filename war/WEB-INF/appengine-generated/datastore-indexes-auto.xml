@@ -1,19 +1,19 @@
-<!-- Indices written at Sun, 29 May 2011 16:02:41 UTC -->
+<!-- Indices written at Sun, 29 May 2011 16:35:19 UTC -->
 
 <datastore-indexes>
 
-    <!-- Used 3 times in query history -->
+    <!-- Used 9 times in query history -->
     <datastore-index kind="Article" ancestor="false" source="auto">
         <property name="webUserRef" direction="asc"/>
         <property name="__key__" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 18 times in query history -->
     <datastore-index kind="WebUser" ancestor="false" source="auto">
         <property name="__key__" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 18 times in query history -->
     <datastore-index kind="Article" ancestor="false" source="auto">
         <property name="__key__" direction="desc"/>
     </datastore-index>

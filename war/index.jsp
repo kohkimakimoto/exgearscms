@@ -16,53 +16,43 @@
     <div class="cbox1">
       <div class="inner">
         <h1>ExGearsCMSはオープンソースのクラウドCMSなんです。</h1>
-        <div class="section">
-          そんでもって以下の特徴があります。
-          <ul class="cms-desc">
-            <li>Google App Engineで動作します。</li>
-            <li>Javaとslim3というフレームワークで構築されています。</li>
-            <li>Googleアカウントでログインしてブログとか書けます。</li>
-            <li><span style="font-weight: bold;">まだいろいろ開発中なので安定版はなかったりします。</span></li>
-          </ul>
-        </div>
+        そんでもって以下の特徴があります。
+        <ul class="cms-desc">
+          <li>Google App Engineで動作します。</li>
+          <li>Javaとslim3というフレームワークで構築されています。</li>
+          <li>Googleアカウントでログインしてブログとか書けます。</li>
+          <li><span style="font-weight: bold;">まだいろいろ開発中なので安定版はなかったりします。</span></li>
+        </ul>
         <h2>このサイトについて。</h2>
-        <div class="section">
-          このサイト自体をExGearsCMSで動かしています。<br />
-          開発ブログの掲載とExGearsCMSを利用したゆるーいコミュニティサービスの提供を行っています。<br />
-          さくっと使ってみたい人は下のリンクか右のメニューからアカウント登録してみてくださいね。<br />
-          ただしまだ安定していないので、データ消えたりするかも<br />
-          <br />
-          <a href="/p/terms">利用規約</a><br />
-          <a href="/reg/register">アカウント登録</a><br />
-        </div>
+        このサイト自体をExGearsCMSで動かしています。<br />
+        ExGearsCMSに関する情報や誰でも使えるゆるーいブログサービスの提供などを行っています。<br />
+        無料で使えるので気になるヒトは右のメニューからアカウント登録してみてくださいね。<br />
+        ただしまだ安定していないので、データ消えたりするかも<br />
+        <br />
+        <a href="/p/terms">利用規約</a><br />
+        <a href="/reg/register">アカウント登録</a><br />
         <h2>ソースコード。</h2>
-        <div class="section">
-          GitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
-          いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。いずれブランチなどを切る予定です。<br />
-          <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a>
-        </div>
+        GitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
+        いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。いずれ汎用的に使えるバージョンを用意してブランチなどを切る予定です。<br />
+        <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a>
         <h2>開発者のブログ。</h2>
-        <div class="section">
-          ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
-          なんかあったらここに書くかも。<br />
-          <a href="http://exgearscms.appspot.com/kohkimakimoto/">http://exgearscms.appspot.com/kohkimakimoto/</a>
-        </div>
+        ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
+        なんかあったらここに書くかも。<br />
+        <a href="http://exgearscms.appspot.com/kohkimakimoto/">http://exgearscms.appspot.com/kohkimakimoto/</a>
       </div>
     </div>
 
     <div class="cbox1">
       <div class="inner">
         <h1>新着記事。</h1>
-        <div class="section">
-          <ul>
-            <c:forEach var="article" items="${articleList}" >
-              <li>
-                <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
-                <a href="${article.url}">${f:h(article.title)}</a>
-              </li>
-            </c:forEach>
-          </ul>
-        </div>
+        <ul>
+          <c:forEach var="article" items="${articleList}" >
+            <li>
+              <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
+              <a href="${article.url}">${f:h(article.title)}</a>
+            </li>
+          </c:forEach>
+        </ul>
       </div>
     </div>
 
