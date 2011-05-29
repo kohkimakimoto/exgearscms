@@ -18,11 +18,13 @@
     <div class="form-post-wrapper">
       <form action="/admin/article/edit?id=${f:h(article.key.id)}" method="post">
       <h2 class="section-title">記事</h2>
+      <div class="record">
        <ul class="error">
          <c:forEach var="e" items="${f:errors()}">
            <li>${f:h(e)}</li>
          </c:forEach>
        </ul>
+      </div>
       <div class="record">
         <label>タイトル</label>
         <div class="input">
@@ -32,7 +34,7 @@
       <div class="record">
         <label>記事本文</label>
         <div class="input">
-          <textarea name="text">${f:h(text)}</textarea>
+          <textarea class="mce" name="text">${f:h(text)}</textarea>
         </div>
       </div>
       <div class="action">

@@ -14,9 +14,9 @@
   <div class="content-left">
     <div class="cbox1">
       <div class="inner">
-        <h2>${f:h(article.title)}</h2>
+        <h1>${f:h(article.title)}</h1>
         <div class="section">
-        ${f:h(article.text)}
+        ${article.text}
         </div>
       </div>
     </div>

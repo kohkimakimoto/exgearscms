@@ -11,14 +11,14 @@ line-height: 1.5;
 table {border-collapse: collapse;}
 ul {padding: 0; margin:0;}
 ul li {list-style: none outside none;}
-h1 {color: #555555; font-size: 24px; margin: 0; padding: 0;}
-h2 {
+h1 {
 color: #555555;
 font-size: 24px;
 margin: 0 0 15px 0;
 padding: 10px 0 10px 0;
 border-bottom: 2px dotted #5138BA;}
-h3 {
+
+h2 {
 color: #555555;
 font-size: 18px;
 margin: 5px 0 10px 0;
@@ -47,14 +47,36 @@ width: 960px;
 text-align: left;
 margin: 0 auto;
 padding-top: 17px;
+position: relative;
 }
 
 .header p.desc {
 padding: 0;
-margin: 0 auto;
-text-align: center;
+margin: 0;
+text-align: left;
 color: #8A8989;
+font-size: 12px;
 
+}
+
+.header .header-menu {
+display: block;
+position: absolute;
+top: 20px;
+right: 0px;
+
+}
+
+.header .header-menu li{
+float: left;
+height: 63px;
+line-height: 63px;
+padding: 0 15px 0 15px;
+background: url('../images/common/headersep.png') top left no-repeat;
+}
+
+.header .header-menu li.last{
+padding: 1px;
 }
 
 .content-wrap {
@@ -111,7 +133,7 @@ margin-bottom: 10px;
 padding: 10px 20px;
 }
 
-.cbox2 h2 {
+.cbox2 h1 {
 padding: 0;
 margin: 0;
 border-width: 0px;

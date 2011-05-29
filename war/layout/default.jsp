@@ -19,8 +19,20 @@
 <body>
 <div class="container">
   <div class="header-wrap"><div class="header">
-    <h1><a href="/"><img src="/static/default/images/common/logo.png" /></a></h1>
+    <div><a href="/"><img src="/static/default/images/common/logo.png" /></a></div>
     <p class="desc">- Google App Engineで動作するオープンソースのクラウドCMS -</p>
+    <ul class="header-menu">
+      <li>
+        <a href="/">HOME</a>
+      </li>
+      <li>
+        <a href="/kohkimakimoto/">開発者ブログ</a>
+      </li>
+      <li>
+        <a href="/p/terms">利用規約</a>
+      </li>
+      <li class="last"></li>
+    </ul>
   </div></div>
   <div class="content-wrap"><div class="content">
     ${param.content}
@@ -30,7 +42,7 @@
 <div class="footer-wrap"><div class="footer">
   <p>"ExGearsCMS" developed by kohki makimoto. Powered by Google App Engine for Java.</p>
   <p>"ExGearsCMS" is a open source software licensed "Apache License 2.0".</p>
-  <p><a href="/p/terms">利用規約</p>
+  <p><a href="/p/terms">利用規約</a></p>
 </div></div>
 </body>
 </html>

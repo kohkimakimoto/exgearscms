@@ -15,7 +15,7 @@
   <div class="content-left">
     <div class="cbox2">
       <div class="inner">
-        <h2>${f:h(webUser.config.myPageTitle)}</h2>
+        <h1>${f:h(webUser.config.myPageTitle)}</h1>
         <div class="section">
         ${f:h(webUser.config.myPageDescription)}
         </div>
@@ -24,7 +24,7 @@
     <c:forEach var="article" items="${articleList}" >
       <div class="cbox1">
         <div class="inner">
-          <h2>${f:h(article.title)}</h2>
+          <h1>${f:h(article.title)}</h1>
           <div class="section">
           ${func:truncate(article.text, 100, "...")}
           <div>

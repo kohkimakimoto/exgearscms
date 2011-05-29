@@ -20,7 +20,7 @@ public class ArticleService {
     public boolean post(Map<String, Object> input, WebUser webUser) {
 
         Validators validators = new Validators(input);
-
+        validators.add("title", validators.required("タイトルは必須です。"));
         if (!validators.validate()) {
             return false;
         }
@@ -34,6 +34,7 @@ public class ArticleService {
 
     public boolean update(Map<String, Object> input, Article article, WebUser webUser) {
         Validators validators = new Validators(input);
+        validators.add("title", validators.required("タイトルは必須です。"));
 
         if (!validators.validate()) {
             return false;

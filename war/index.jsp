@@ -15,7 +15,7 @@
   <div class="content-left">
     <div class="cbox1">
       <div class="inner">
-        <h2>ExGearsCMSはオープンソースのクラウドCMSなんです。</h2>
+        <h1>ExGearsCMSはオープンソースのクラウドCMSなんです。</h1>
         <div class="section">
           そんでもって以下の特徴があります。
           <ul class="cms-desc">
@@ -25,7 +25,7 @@
             <li><span style="font-weight: bold;">まだいろいろ開発中なので安定版はなかったりします。</span></li>
           </ul>
         </div>
-        <h3>このサイトについて。</h3>
+        <h2>このサイトについて。</h2>
         <div class="section">
           このサイト自体をExGearsCMSで動かしています。<br />
           開発ブログの掲載とExGearsCMSを利用したゆるーいコミュニティサービスの提供を行っています。<br />
@@ -35,13 +35,13 @@
           <a href="/p/terms">利用規約</a><br />
           <a href="/reg/register">アカウント登録</a><br />
         </div>
-        <h3>ソースコード。</h3>
+        <h2>ソースコード。</h2>
         <div class="section">
           GitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
-          いまのところこのサイトで動作させているソースコードをそのままコミットしています。いずれブランチなどを切るかも。<br />
+          いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。いずれブランチなどを切る予定です。<br />
           <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a>
         </div>
-        <h3>開発者のブログ。</h3>
+        <h2>開発者のブログ。</h2>
         <div class="section">
           ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
           なんかあったらここに書くかも。<br />
@@ -52,14 +52,13 @@
 
     <div class="cbox1">
       <div class="inner">
-        <h2>新着記事。</h2>
+        <h1>新着記事。</h1>
         <div class="section">
           <ul>
             <c:forEach var="article" items="${articleList}" >
               <li>
                 <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
-                <a href="${article.url}">${func:truncate(article.title, 100, "...")}</a>
-                <div>${func:truncate(article.text, 100, "...")}</div>
+                <a href="${article.url}">${f:h(article.title)}</a>
               </li>
             </c:forEach>
           </ul>

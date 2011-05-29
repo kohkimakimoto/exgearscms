@@ -553,7 +553,7 @@ font: 13px Arial,sans-serif;
 
 .body-admin .content .form-post-wrapper .record div.input textarea {
 width: 95%;
-height: 400px;
+height: 250px;
 background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 7px 2px;
 border: 1px solid #b1b1b1;

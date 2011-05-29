@@ -7,10 +7,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="/admin/static/css/admin-style.css" type="text/css" media="all" />
-<script type="text/javascript" src="/admin//static/js/jquery-1.5.2.min.js"></script>
-<script type="text/javascript" src="/admin//static/js/jquery-ui-1.8.7.custom.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="/admin//static/js/jquery.plugin.js"></script>
-<script type="text/javascript" src="/admin//static/js/global.js"></script>
+<script type="text/javascript" src="/admin/static/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/admin/static/js/jquery-ui-1.8.7.custom.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/admin/static/js/jquery.plugin.js"></script>
+<script type="text/javascript" src="/admin/static/js/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="/admin/static/js/global.js"></script>
+
 <title>Administration tools</title>
 </head>
 <body class="body-admin">
