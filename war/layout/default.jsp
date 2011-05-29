@@ -31,6 +31,11 @@
       <li>
         <a href="/p/terms">利用規約</a>
       </li>
+      <c:if test="${user.authenticated}" >
+      <li>
+        <a href="/admin/">管理</a>
+      </li>
+      </c:if>
       <li class="last"></li>
     </ul>
   </div></div>
