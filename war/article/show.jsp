@@ -15,9 +15,7 @@
     <div class="cbox1">
       <div class="inner">
         <h1>${f:h(article.title)}</h1>
-        <div class="section">
         ${article.text}
-        </div>
       </div>
     </div>
   </div>

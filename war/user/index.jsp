@@ -16,20 +16,16 @@
     <div class="cbox2">
       <div class="inner">
         <h1>${f:h(webUser.config.myPageTitle)}</h1>
-        <div class="section">
         ${f:h(webUser.config.myPageDescription)}
-        </div>
       </div>
     </div>
     <c:forEach var="article" items="${articleList}" >
       <div class="cbox1">
         <div class="inner">
           <h1>${f:h(article.title)}</h1>
-          <div class="section">
           ${func:truncate(article.text, 100, "...")}
           <div>
             <a href="${article.url}">続きを読む</a>
-          </div>
           </div>
         </div>
       </div>

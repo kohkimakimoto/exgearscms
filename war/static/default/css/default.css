@@ -21,7 +21,7 @@ border-bottom: 2px dotted #5138BA;}
 h2 {
 color: #555555;
 font-size: 18px;
-margin: 15px 0 10px 0;
+margin: 10px 0 10px 0;
 padding: 2px 0 5px 10px;
 border-bottom: 1px solid #e3e3e3;
 border-left: 10px solid #e3e3e3}
@@ -116,11 +116,7 @@ margin-bottom: 10px;
 }
 
 .cbox1 .inner {
-padding: 20px;
-}
-
-.cbox1 .section {
-margin-bottom: 30px;
+padding: 20px 20px 30px 20px;
 }
 
 .cbox2 {
