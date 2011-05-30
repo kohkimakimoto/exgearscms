@@ -13,7 +13,6 @@
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
         <param-value>UTF-8</param-value>
     </context-param>
-
     <filter>
         <filter-name>HotReloadingFilter</filter-name>
         <filter-class>org.slim3.controller.HotReloadingFilter</filter-class>
@@ -31,11 +30,13 @@
         <filter-class>com.appspot.exgearscms.filter.UserAuthFilter</filter-class>
     </filter>
 
+<!-- 
     <filter-mapping>
         <filter-name>HotReloadingFilter</filter-name>
         <url-pattern>/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
+ -->
     <filter-mapping>
         <filter-name>DatastoreFilter</filter-name>
         <url-pattern>/*</url-pattern>

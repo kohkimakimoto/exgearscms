@@ -12,3 +12,4 @@
     ${f:h(webUser.config.profile)}
   </div>
 </div>
+<c:import url="/_widgets.jsp"></c:import>
