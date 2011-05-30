@@ -20,8 +20,10 @@ public class Config implements Serializable {
     @Attribute(version = true)
     private Long version;
 
+    /** マイページのタイトル */
     private String myPageTitle;
 
+    /** マイページの説明 */
     @Attribute(lob = true)
     private String myPageDescription;
 

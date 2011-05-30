@@ -28,6 +28,8 @@ public class WebUser implements Serializable {
 
     private String uid;
 
+    private String name;
+    
     private boolean active = true;
 
     private boolean authenticated = true;
@@ -180,6 +182,14 @@ public class WebUser implements Serializable {
 
     public void setConfig(Config config) {
         getConfigRef().setModel(config);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
