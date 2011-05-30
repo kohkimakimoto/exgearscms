@@ -7,12 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
+import com.appspot.exgearscms.controller.ApplicationController;
 import com.appspot.exgearscms.model.Article;
 import com.appspot.exgearscms.model.WebUser;
 import com.appspot.exgearscms.service.ArticleService;
 import com.appspot.exgearscms.service.WebUserService;
 
-public class IndexController extends Controller {
+public class IndexController extends ApplicationController {
 
     private WebUserService webUserService = new WebUserService();
     private ArticleService articleService = new ArticleService();

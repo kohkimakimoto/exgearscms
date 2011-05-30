@@ -5,7 +5,9 @@ import java.io.File;
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
-public class PageController extends Controller {
+import com.appspot.exgearscms.controller.ApplicationController;
+
+public class PageController extends ApplicationController {
 
     @Override
     public Navigation run() throws Exception {

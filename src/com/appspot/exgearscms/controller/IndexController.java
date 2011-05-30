@@ -12,7 +12,7 @@ import com.appspot.exgearscms.service.WebUserService;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
-public class IndexController extends Controller {
+public class IndexController extends ApplicationController {
     WebUserService webUserService = new WebUserService();
     ArticleService articleService = new ArticleService();
 

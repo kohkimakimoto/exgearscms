@@ -12,12 +12,12 @@ import org.slim3.controller.router.Routing;
 public class AppRouter extends RouterImpl {
 
     private static final Logger logger = Logger.getLogger(AppRouter.class.getName());
-    
+
     protected List<Routing> routingToUserList = new ArrayList<Routing>();
-    
+
     public AppRouter() {
         addRouting("/p/{page}", "/p/page?page={page}");
-        
+
         addRoutingToUser("/{uid}", "/user/?uid={uid}");
         addRoutingToUser("/{uid}/", "/user/?uid={uid}");
         addRoutingToUser("/{uid}/article/{id}", "/article/show?uid={uid}&id={id}");
@@ -43,10 +43,10 @@ public class AppRouter extends RouterImpl {
             // Default routing
             rout = super.route(request, path);
         }
-        
+
         return rout;
     }
-    
+
     public String routeToUser(HttpServletRequest request, String path) {
         if (request == null) {
             throw new NullPointerException("The request parameter is null.");
