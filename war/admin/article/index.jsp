@@ -13,6 +13,9 @@
       <a href="/admin/">ダッシュボード</a>»
     </div>
     <h1 class="h1-content">記事</h1>
+    ${pager.count}件
+    ${pager.first.key.id}
+    ${pager.last.key.id}
     <div class="content-table-wrapper">
     <table class="content-table stripe">
       <thead>
