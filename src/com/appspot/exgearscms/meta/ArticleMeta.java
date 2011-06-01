@@ -1,6 +1,6 @@
 package com.appspot.exgearscms.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-05-31 00:42:08")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-01 18:57:36")
 /** */
 public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot.exgearscms.model.Article> {
 
