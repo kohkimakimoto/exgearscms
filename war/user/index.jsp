@@ -23,6 +23,9 @@
       <div class="cbox1">
         <div class="inner">
           <h1>${f:h(article.title)}</h1>
+          <div>
+            ${article.createdAt}
+          </div>
           ${func:truncate(article.text, 100, "...")}
           <div>
             <a href="${article.url}">続きを読む</a>

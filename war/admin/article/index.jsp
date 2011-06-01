@@ -33,7 +33,8 @@
             ${f:h(var.key.id)}
           </td>
           <td valign="top" class="minrow">
-            ${f:h(var.title)}
+            <div>${f:h(var.createdAt)}</div>
+            <div>${f:h(var.title)}</div>
           </td>
           <td valign="top" class="">
             <a target="_blank" href="${f:h(var.url)}">${f:h(var.url)}</a>

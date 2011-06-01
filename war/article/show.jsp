@@ -15,6 +15,9 @@
     <div class="cbox1">
       <div class="inner">
         <h1>${f:h(article.title)}</h1>
+         <div>
+           ${article.createdAt}
+         </div>
         ${article.text}
       </div>
     </div>

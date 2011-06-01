@@ -1,8 +1,11 @@
 package com.appspot.exgearscms.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-02 00:06:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-02 01:55:50")
 /** */
 public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot.exgearscms.model.Article> {
+
+    /** */
+    public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Article, java.util.Date> createdAt = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Article, java.util.Date>(this, "createdAt", "createdAt", java.util.Date.class);
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Article, com.google.appengine.api.datastore.Key> key = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Article, com.google.appengine.api.datastore.Key>(this, "__key__", "key", com.google.appengine.api.datastore.Key.class);
@@ -36,6 +39,7 @@ public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot
     @Override
     public com.appspot.exgearscms.model.Article entityToModel(com.google.appengine.api.datastore.Entity entity) {
         com.appspot.exgearscms.model.Article model = new com.appspot.exgearscms.model.Article();
+        model.setCreatedAt((java.util.Date) entity.getProperty("createdAt"));
         model.setKey(entity.getKey());
         model.setText(textToString((com.google.appengine.api.datastore.Text) entity.getProperty("text")));
         model.setTitle((java.lang.String) entity.getProperty("title"));
@@ -56,6 +60,7 @@ public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot
         } else {
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
+        entity.setProperty("createdAt", m.getCreatedAt());
         entity.setUnindexedProperty("text", stringToText(m.getText()));
         entity.setProperty("title", m.getTitle());
         entity.setProperty("version", m.getVersion());
@@ -126,6 +131,11 @@ public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot
         com.appspot.exgearscms.model.Article m = (com.appspot.exgearscms.model.Article) model;
         writer.beginObject();
         org.slim3.datastore.json.JsonCoder encoder = null;
+        if(m.getCreatedAt() != null){
+            writer.setNextPropertyName("createdAt");
+            encoder = new org.slim3.datastore.json.Default();
+            encoder.encode(writer, m.getCreatedAt());
+        }
         if(m.getKey() != null){
             writer.setNextPropertyName("key");
             encoder = new org.slim3.datastore.json.Default();
@@ -159,6 +169,9 @@ public final class ArticleMeta extends org.slim3.datastore.ModelMeta<com.appspot
         com.appspot.exgearscms.model.Article m = new com.appspot.exgearscms.model.Article();
         org.slim3.datastore.json.JsonReader reader = null;
         org.slim3.datastore.json.JsonCoder decoder = null;
+        reader = rootReader.newObjectReader("createdAt");
+        decoder = new org.slim3.datastore.json.Default();
+        m.setCreatedAt(decoder.decode(reader, m.getCreatedAt()));
         reader = rootReader.newObjectReader("key");
         decoder = new org.slim3.datastore.json.Default();
         m.setKey(decoder.decode(reader, m.getKey()));

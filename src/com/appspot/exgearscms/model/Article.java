@@ -1,6 +1,7 @@
 package com.appspot.exgearscms.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
@@ -21,6 +22,8 @@ public class Article implements Serializable {
     @Attribute(version = true)
     private Long version;
 
+    private Date createdAt;
+
     private String title;
 
     @Attribute(lob = true)
@@ -29,6 +32,9 @@ public class Article implements Serializable {
     private ModelRef<WebUser> webUserRef = new ModelRef<WebUser>(WebUser.class);
 
     public void save() {
+        if (createdAt == null) {
+            createdAt = new Date();
+        }
         Transaction tx = Datastore.beginTransaction();
         Datastore.put(this);
         tx.commit();
@@ -134,5 +140,13 @@ public class Article implements Serializable {
 
     public WebUser getWebUser() {
         return getWebUserRef().getModel();
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
     }
 }

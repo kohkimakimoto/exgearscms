@@ -49,7 +49,7 @@ public class ArticleService {
     public List<Article> getArticleList(int limit) {
         return Datastore.query(meta)
             .limit(limit)
-            .sort(meta.key.desc)
+            .sort(meta.createdAt.desc)
             .asList();
     }
 
@@ -57,23 +57,26 @@ public class ArticleService {
         return Datastore.query(meta)
             .filter(meta.webUserRef.equal(webUser.getKey()))
             .limit(limit)
-            .sort(meta.key.desc)
+            .sort(meta.createdAt.desc)
             .asList();
     }
 
     public Pager<Article> getArticleListWithPager(int page, int maxPerPage) {
         Pager<Article> pager = new Pager<Article>();
-        pager.setQuery(Datastore.query(meta).sort(meta.key.desc));
-
+        pager.setModelClass(Article.class);
+        pager.setQuery(Datastore.query(meta).sort(meta.createdAt.desc));
+        pager.setMaxPageNumber(10);
         pager.setMaxPerPage(maxPerPage);
+        pager.setPage(page);
         pager.init();
+
         return pager;
     }
 
     public Pager<Article> getArticleListWithPager(int page, int maxPerPage, WebUser webUser) {
         Pager<Article> pager = new Pager<Article>();
         pager.setModelClass(Article.class);
-        pager.setQuery(Datastore.query(meta).filter(meta.webUserRef.equal(webUser.getKey())).sort(meta.key.desc));
+        pager.setQuery(Datastore.query(meta).filter(meta.webUserRef.equal(webUser.getKey())).sort(meta.createdAt.desc));
         pager.setMaxPageNumber(10);
         pager.setMaxPerPage(maxPerPage);
         pager.setPage(page);
