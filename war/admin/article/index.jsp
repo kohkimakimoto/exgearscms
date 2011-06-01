@@ -13,9 +13,9 @@
       <a href="/admin/">ダッシュボード</a>»
     </div>
     <h1 class="h1-content">記事</h1>
-    ${pager.count}件
-    ${pager.first.key.id}
-    ${pager.last.key.id}
+    <c:import url="/admin/_pager.jsp" >
+      <c:param name="page" value="${page}"/>
+    </c:import>
     <div class="content-table-wrapper">
     <table class="content-table stripe">
       <thead>
@@ -46,6 +46,9 @@
       </tbody>
     </table>
     </div>
+    <c:import url="/admin/_pager.jsp" >
+      <c:param name="page" value="${page}"/>
+    </c:import>
   </div>
 </c:param>
 </c:import>

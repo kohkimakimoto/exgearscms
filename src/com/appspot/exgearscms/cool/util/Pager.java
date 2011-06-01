@@ -1,5 +1,6 @@
 package com.appspot.exgearscms.cool.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slim3.datastore.AbstractAttributeMeta;
@@ -14,26 +15,27 @@ import org.slim3.datastore.ModelQuery;
 import com.google.appengine.api.datastore.Key;
 
 public class Pager<M> {
-    
+
     public static final int OPERATOR_GREATER_THAN = 0;
     public static final int OPERATOR_LESS_THAN = 1;
-    
+
     private Class<?> modelClass;
-    
-    
+
     private ModelQuery<M> query;
 
     private Integer maxPerPage;
-    
-    private List<M> results;
-    
-    private Integer count;
-    
-    private Long pointer = 1L;
-    
-    private int pagingOperator = OPERATOR_GREATER_THAN;
 
-    private AbstractAttributeMeta<?, ?> pagingAttributeMeta;
+    private Integer maxPageNumber = 10;
+
+    private List<M> results;
+
+    private Integer count = 0;
+
+    private Integer page = 0;
+
+    private Integer offset = 0;
+
+    private Integer lastPage = 0;
 
     public void setModelClass(Class<?> modelClass) {
         this.modelClass = modelClass;
@@ -42,11 +44,11 @@ public class Pager<M> {
     public Class<?> getModelClass() {
         return modelClass;
     }
-    
+
     public ModelQuery<M> getQuery() {
         return query;
     }
-    
+
     public void setQuery(ModelQuery<M> query) {
         this.query = query;
     }
@@ -59,46 +61,41 @@ public class Pager<M> {
         this.maxPerPage = maxPerPage;
     }
 
-    public void setPointer(Long pointer) {
-        this.pointer = pointer;
-    }
-
-    public Long getPointer() {
-        return pointer;
-    }
-
-    public void setPagingOperator(int pagingOperator) {
-        this.pagingOperator = pagingOperator;
-    }
-
-    public int getPagingOperator() {
-        return pagingOperator;
-    }
-
-    public void setPagingAttributeMeta(AbstractAttributeMeta<?, ?> pagingAttributeMeta) {
-        this.pagingAttributeMeta = pagingAttributeMeta;
-    }
-
-    public AbstractAttributeMeta<?, ?> getPagingAttributeMeta() {
-        return pagingAttributeMeta;
-    }
-    
     public void init() {
         // Counting
         count = query.count();
-        
-        Key pointerKey = Datastore.createKey(modelClass, pointer);
-        FilterCriterion criterion = null;
-        if (pagingOperator == OPERATOR_GREATER_THAN) {
-            criterion = new GreaterThanCriterion(pagingAttributeMeta, pointerKey);
-        } else if (pagingOperator == OPERATOR_LESS_THAN) {
-            criterion = new LessThanCriterion(pagingAttributeMeta, pointerKey);
+
+        if (count == 0 || page == 0 || maxPerPage == 0) {
+            lastPage = 0;
         } else {
-            criterion = new GreaterThanCriterion(pagingAttributeMeta, pointerKey);
+            offset = (page - 1) * maxPerPage;
+            lastPage = (int)Math.ceil(count / maxPerPage);
         }
-        
+
         // Get data.
-        results = query.filter(criterion).limit(getMaxPerPage()).asList();
+        results = query.offset(offset).limit(maxPerPage).asList();
+    }
+
+    public List<Integer> getLinks() {
+        List<Integer> links = new ArrayList<Integer>();
+        int tmp = (int)(page - Math.floor(maxPageNumber / 2));
+        int check = lastPage - maxPageNumber + 1;
+        int limit = check > 0 ? check : 1;
+        int begin = tmp > 0 ? (tmp > limit ? limit : tmp) : 1;
+
+        int i = begin;
+        while ((i < begin + maxPageNumber) && (i <= lastPage)) {
+            links.add(i);
+            i++;
+        }
+
+        links.add(i++);
+
+        if (links.size() <= 1) {
+            links = null;
+        }
+
+        return links;
     }
 
     public List<M> getResults() {
@@ -115,5 +112,37 @@ public class Pager<M> {
 
     public Object getFirst() {
         return results.get(0);
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setLastPage(Integer lastPage) {
+        this.lastPage = lastPage;
+    }
+
+    public Integer getLastPage() {
+        return lastPage;
+    }
+
+    public void setMaxPageNumber(Integer maxPageNumber) {
+        this.maxPageNumber = maxPageNumber;
+    }
+
+    public Integer getMaxPageNumber() {
+        return maxPageNumber;
     }
 }

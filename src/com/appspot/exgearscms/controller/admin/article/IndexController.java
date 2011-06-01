@@ -4,6 +4,7 @@ import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
 import com.appspot.exgearscms.cool.util.Pager;
+import com.appspot.exgearscms.model.Article;
 import com.appspot.exgearscms.service.ArticleService;
 import com.appspot.exgearscms.service.WebUserService;
 
@@ -13,7 +14,16 @@ public class IndexController extends Controller {
 
     @Override
     public Navigation run() throws Exception {
-        requestScope("pager", articleService.getArticleListWithPager(1L, Pager.OPERATOR_GREATER_THAN, 5, webUserService.getWebUser()));
+
+        int page = 1;
+        if (request.getAttribute("page") != null) {
+            page = Integer.valueOf((String)request.getAttribute("page"));
+        }
+
+        Pager<Article> pager = articleService.getArticleListWithPager(
+            page, 20, webUserService.getWebUser());
+
+        requestScope("pager", pager);
         return forward("index.jsp");
     }
 }

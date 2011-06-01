@@ -33,7 +33,7 @@ public class IndexController extends ApplicationController {
             return redirect(uri + "/");
         }
 
-        List<Article> articleList = articleService.getArticleList(10, webUser);
+        List<Article> articleList = articleService.getArticleList(5, webUser);
         requestScope("articleList", articleList);
         requestScope("webUser", webUser);
 

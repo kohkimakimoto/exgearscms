@@ -47,32 +47,38 @@ public class ArticleService {
     }
 
     public List<Article> getArticleList(int limit) {
-        return Datastore.query(meta).sort(meta.key.desc).asList();
+        return Datastore.query(meta)
+            .limit(limit)
+            .sort(meta.key.desc)
+            .asList();
     }
 
     public List<Article> getArticleList(int limit, WebUser webUser) {
-        return Datastore.query(meta).filter(meta.webUserRef.equal(webUser.getKey())).sort(meta.key.desc).asList();
+        return Datastore.query(meta)
+            .filter(meta.webUserRef.equal(webUser.getKey()))
+            .limit(limit)
+            .sort(meta.key.desc)
+            .asList();
     }
 
     public Pager<Article> getArticleListWithPager(int page, int maxPerPage) {
         Pager<Article> pager = new Pager<Article>();
         pager.setQuery(Datastore.query(meta).sort(meta.key.desc));
-        
+
         pager.setMaxPerPage(maxPerPage);
         pager.init();
         return pager;
     }
 
-    public Pager<Article> getArticleListWithPager(long pointer, int pagingOperator, int maxPerPage, WebUser webUser) {
+    public Pager<Article> getArticleListWithPager(int page, int maxPerPage, WebUser webUser) {
         Pager<Article> pager = new Pager<Article>();
         pager.setModelClass(Article.class);
         pager.setQuery(Datastore.query(meta).filter(meta.webUserRef.equal(webUser.getKey())).sort(meta.key.desc));
+        pager.setMaxPageNumber(10);
         pager.setMaxPerPage(maxPerPage);
-        pager.setPointer(pointer);
-        pager.setPagingOperator(pagingOperator);
-        pager.setPagingAttributeMeta(meta.key);
+        pager.setPage(page);
         pager.init();
-        
+
         meta.key.greaterThan(Datastore.createKey(Article.class, 1));
         return pager;
     }
