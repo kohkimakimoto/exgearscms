@@ -26,6 +26,15 @@ String path = (String)request.getAttribute("location");
     <% }%>
   </li>
 -->
+  <li class="root"><a class="<% if (path.indexOf("/admin/widget/") != -1) out.print("on");%>" href="/admin/widget/">ウィジェット</a>
+    <% if (path.indexOf("/admin/widget/") != -1) { %>
+    <ul class="child">
+      <li><a class="<% if (path.equals("/admin/widget/")) out.print("on");%>" href="/admin/widget/">ウィジェット</a></li>
+      <li><a class="<% if (path.equals("/admin/widget/new")) out.print("on");%>" href="/admin/widget/new">新規作成</a></li>
+    </ul>
+    <% }%>
+  </li>
+
   <li class="root"><a class="<% if (path.indexOf("/admin/config/") != -1) out.print("on");%>" href="/admin/config/">設定</a>
     <% if (path.indexOf("/admin/config/") != -1) { %>
     <ul class="child">
