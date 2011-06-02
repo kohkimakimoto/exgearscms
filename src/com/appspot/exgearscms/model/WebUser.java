@@ -32,7 +32,7 @@ public class WebUser implements Serializable {
     private String uid;
 
     private String name;
-    
+
     private boolean active = true;
 
     private boolean authenticated = true;
@@ -43,12 +43,10 @@ public class WebUser implements Serializable {
     private User guser = null;
 
     private ModelRef<Config> configRef = new ModelRef<Config>(Config.class);
-    
+
     private ModelRef<MyPageConfig> myPageConfigRef = new ModelRef<MyPageConfig>(MyPageConfig.class);
-    
+
     private ModelRef<WebUserConfig> webUserConfigRef = new ModelRef<WebUserConfig>(WebUserConfig.class);
-    
-    
 
     public void save() {
         Transaction tx = Datastore.beginTransaction();
@@ -208,7 +206,7 @@ public class WebUser implements Serializable {
     public void setWebUserConfig(WebUserConfig webUserConfig) {
         getWebUserConfigRef().setModel(webUserConfig);
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
@@ -224,7 +222,29 @@ public class WebUser implements Serializable {
     public ModelRef<WebUserConfig> getWebUserConfigRef() {
         return webUserConfigRef;
     }
-    
+
+    public String getProfileImageUrl() {
+        WebUserConfig config = getWebUserConfig();
+        String email = config.getGravatarEmail();
+        if (email == null || email.equals("")) {
+            return "/static/default/images/icon/user-80x80.png";
+        }
+        String hash = MD5Util.md5Hex(email);
+        String url = "http://www.gravatar.com/avatar/";
+        return url + hash;
+    }
+
+    public String getProfileImageUrl22() {
+        WebUserConfig config = getWebUserConfig();
+        String email = config.getGravatarEmail();
+        if (email == null || email.equals("")) {
+            return "/static/default/images/icon/user-22x22.png";
+        }
+        String hash = MD5Util.md5Hex(email);
+        String url = "http://www.gravatar.com/avatar/";
+        return url + hash + "?s=22";
+    }
+
     public String getGravatarImageUrl() {
         String hash = MD5Util.md5Hex(email);
         String url = "http://www.gravatar.com/avatar/";

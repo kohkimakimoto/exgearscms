@@ -10,6 +10,8 @@ import org.slim3.util.BeanUtil;
 
 import com.appspot.exgearscms.meta.WebUserMeta;
 import com.appspot.exgearscms.model.WebUser;
+import com.appspot.exgearscms.model.config.MyPageConfig;
+import com.appspot.exgearscms.model.config.WebUserConfig;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 import com.google.appengine.api.users.User;
@@ -31,8 +33,8 @@ public class WebUserService {
             validators.maxlength(100, "ユーザIDは4文字以上100字以内で指定してください。"),
             validators.regexp("^[a-zA-Z0-9][a-zA-Z0-9_]+", "半角英数とアンダースコアで指定してください。また先頭にアンダースコアは使えません。")
         );
-        
-        
+
+
         if (webUser.isAuthenticated()) {
             validators.getErrors().put("uid", "このGoogleアカウントはすでに登録されています。");
             return false;
@@ -43,7 +45,7 @@ public class WebUserService {
             // Validate errors.
             return false;
         }
-        
+
         String str = (String)input.get("uid");
         if (str.startsWith("admin")) {
             validators.getErrors().put("uid", "このユーザIDは使用できません。");
@@ -61,6 +63,14 @@ public class WebUserService {
             validators.getErrors().put("uid", "このユーザIDをすでに登録されています。別なユーザIDを指定してください。");
             return false;
         }
+
+        MyPageConfig myPageConfig = new MyPageConfig();
+        myPageConfig.save();
+        webUser.setMyPageConfig(myPageConfig);
+
+        WebUserConfig webUserConfig = new WebUserConfig();
+        webUserConfig.save();
+        webUser.setWebUserConfig(webUserConfig);
 
         Datastore.put(webUser);
         tx.commit();

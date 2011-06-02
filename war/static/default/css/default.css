@@ -262,11 +262,12 @@ padding: 5px 0;
 
 
 .user-menu {
-padding: 0 0 0 17px;
+padding: 0;
 }
 
 .user-menu li {
 padding: 2px 0;
+list-style: inside disc;
 }
 
 .user-menu .mail{

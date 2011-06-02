@@ -74,15 +74,20 @@
       </div>
     </c:if>
     <c:if test="${user.authenticated}" >
+
+
       <div class="scbox1 user-info">
         <div class="inner">
-        <div class="subject">ユーザメニュー</div>
-          <div class="user-uid">
-            <img src="/static/default/images/icon/user-22x22.png" /><a href="${f:h(user.url)}">${f:h(user.uid)}</a>
+          <div class="subject">ユーザメニュー</div>
+          <div>
+            <img style="float: left; margin: 0 10px 10px 0;" src="${user.profileImageUrl}" />
+            <a href="${f:h(user.url)}">${user.uid}</a><br />
+            <span style="color: #8e8e8e;">${f:h(user.webUserConfig.nickname)}</span>
+          </div>
+          <div style="clear: both;">
           </div>
           <div class="user-menu">
             <ul>
-              <li class="mail">${user.email}</li>
               <li><a href="/admin/">管理ページ</a></li>
               <li><a href="${f:h(user.url)}">Myページ</a></li>
               <li><a href="${f:h(logoutUrl)}">ログアウト</a></li>
@@ -90,6 +95,10 @@
           </div>
         </div>
       </div>
+
+
+
+
     </c:if>
 
     <div class="scbox1">
@@ -97,9 +106,14 @@
         <div class="subject">登録してるユーザさん</div>
         <ul>
           <c:forEach var="webUser" items="${webUserList}" >
-            <li class="user-uid">
-              <img src="/static/default/images/icon/user-22x22.png" /><a href="${webUser.url}">${webUser.uid}</a>
-            </li>
+            <div>
+              <img style="float: left; margin: 0 10px 10px 0;" src="${webUser.profileImageUrl}" />
+              <a href="${f:h(webUser.url)}">${webUser.uid}</a><br />
+              <span style="color: #8e8e8e;">${f:h(webUser.webUserConfig.nickname)}</span>
+            </div>
+            <div style="clear: both;">
+            </div>
+
           </c:forEach>
         </ul>
       </div>

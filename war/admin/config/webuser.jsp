@@ -28,7 +28,16 @@
           <input class="text" type="text" ${f:text("nickname")} />
         </div>
       </div>
-
+      <div class="record">
+        <label>Gravatar<br />アカウントメール</label>
+        <div class="input">
+          <input class="text" type="text" ${f:text("gravatarEmail")} /><br />
+          <span style="font-size: 80%;">※プロフィール画像にGravatarを利用します<a target="_blank" href="http://gravatar.com/">gravatar.com</a></span>
+        </div>
+        <div class="input">
+          <img src="${user.profileImageUrl}" />
+        </div>
+      </div>
       <div class="record">
         <label>プロフィール</label>
         <div class="input">

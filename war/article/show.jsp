@@ -24,9 +24,7 @@
   </div>
 
   <div class="content-right">
-    <c:import url="/user/_sidemenu.jsp">
-      <c:param name="webUser" value="${webUser}"/>
-    </c:import>
+    <c:import url="/_widgets.jsp"></c:import>
   </div>
 </c:param>
 </c:import>

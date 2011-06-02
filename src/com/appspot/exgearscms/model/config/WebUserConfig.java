@@ -21,17 +21,18 @@ public class WebUserConfig implements Serializable {
     private Long version;
 
     private String nickname;
-    
+
+    private String gravatarEmail;
+
     @Attribute(lob = true)
     private String profile;
 
-    
     public void save() {
         Transaction tx = Datastore.beginTransaction();
         Datastore.put(this);
         tx.commit();
     }
-    
+
     /**
      * Returns the key.
      *
@@ -114,6 +115,14 @@ public class WebUserConfig implements Serializable {
 
     public String getNickname() {
         return nickname;
+    }
+
+    public void setGravatarEmail(String gravatarEmail) {
+        this.gravatarEmail = gravatarEmail;
+    }
+
+    public String getGravatarEmail() {
+        return gravatarEmail;
     }
 
 }
