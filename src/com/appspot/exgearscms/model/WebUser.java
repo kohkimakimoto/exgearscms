@@ -2,6 +2,9 @@ package com.appspot.exgearscms.model;
 
 import java.io.Serializable;
 
+import com.appspot.exgearscms.cool.util.MD5Util;
+import com.appspot.exgearscms.model.config.MyPageConfig;
+import com.appspot.exgearscms.model.config.WebUserConfig;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 import com.google.appengine.api.users.User;
@@ -40,6 +43,12 @@ public class WebUser implements Serializable {
     private User guser = null;
 
     private ModelRef<Config> configRef = new ModelRef<Config>(Config.class);
+    
+    private ModelRef<MyPageConfig> myPageConfigRef = new ModelRef<MyPageConfig>(MyPageConfig.class);
+    
+    private ModelRef<WebUserConfig> webUserConfigRef = new ModelRef<WebUserConfig>(WebUserConfig.class);
+    
+    
 
     public void save() {
         Transaction tx = Datastore.beginTransaction();
@@ -184,12 +193,42 @@ public class WebUser implements Serializable {
         getConfigRef().setModel(config);
     }
 
+    public MyPageConfig getMyPageConfig() {
+        return getMyPageConfigRef().getModel();
+    }
+
+    public void setMyPageConfig(MyPageConfig myPageConfig) {
+        getMyPageConfigRef().setModel(myPageConfig);
+    }
+
+    public WebUserConfig getWebUserConfig() {
+        return getWebUserConfigRef().getModel();
+    }
+
+    public void setWebUserConfig(WebUserConfig webUserConfig) {
+        getWebUserConfigRef().setModel(webUserConfig);
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
 
     public String getName() {
         return name;
+    }
+
+    public ModelRef<MyPageConfig> getMyPageConfigRef() {
+        return myPageConfigRef;
+    }
+
+    public ModelRef<WebUserConfig> getWebUserConfigRef() {
+        return webUserConfigRef;
+    }
+    
+    public String getGravatarImageUrl() {
+        String hash = MD5Util.md5Hex(email);
+        String url = "http://www.gravatar.com/avatar/";
+        return url + hash;
     }
 
 }

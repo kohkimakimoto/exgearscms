@@ -1,23 +1,11 @@
 package com.appspot.exgearscms.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-02 00:06:54")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-03 00:03:33")
 /** */
 public final class ConfigMeta extends org.slim3.datastore.ModelMeta<com.appspot.exgearscms.model.Config> {
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, com.google.appengine.api.datastore.Key> key = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, com.google.appengine.api.datastore.Key>(this, "__key__", "key", com.google.appengine.api.datastore.Key.class);
-
-    /** */
-    public final org.slim3.datastore.StringUnindexedAttributeMeta<com.appspot.exgearscms.model.Config> myPageDescription = new org.slim3.datastore.StringUnindexedAttributeMeta<com.appspot.exgearscms.model.Config>(this, "myPageDescription", "myPageDescription");
-
-    /** */
-    public final org.slim3.datastore.StringAttributeMeta<com.appspot.exgearscms.model.Config> myPageTitle = new org.slim3.datastore.StringAttributeMeta<com.appspot.exgearscms.model.Config>(this, "myPageTitle", "myPageTitle");
-
-    /** */
-    public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, java.lang.Integer> myPageType = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, java.lang.Integer>(this, "myPageType", "myPageType", int.class);
-
-    /** */
-    public final org.slim3.datastore.StringUnindexedAttributeMeta<com.appspot.exgearscms.model.Config> profile = new org.slim3.datastore.StringUnindexedAttributeMeta<com.appspot.exgearscms.model.Config>(this, "profile", "profile");
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, java.lang.Long> version = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.Config, java.lang.Long>(this, "version", "version", java.lang.Long.class);
@@ -40,10 +28,6 @@ public final class ConfigMeta extends org.slim3.datastore.ModelMeta<com.appspot.
     public com.appspot.exgearscms.model.Config entityToModel(com.google.appengine.api.datastore.Entity entity) {
         com.appspot.exgearscms.model.Config model = new com.appspot.exgearscms.model.Config();
         model.setKey(entity.getKey());
-        model.setMyPageDescription(textToString((com.google.appengine.api.datastore.Text) entity.getProperty("myPageDescription")));
-        model.setMyPageTitle((java.lang.String) entity.getProperty("myPageTitle"));
-        model.setMyPageType(longToPrimitiveInt((java.lang.Long) entity.getProperty("myPageType")));
-        model.setProfile(textToString((com.google.appengine.api.datastore.Text) entity.getProperty("profile")));
         model.setVersion((java.lang.Long) entity.getProperty("version"));
         return model;
     }
@@ -57,10 +41,6 @@ public final class ConfigMeta extends org.slim3.datastore.ModelMeta<com.appspot.
         } else {
             entity = new com.google.appengine.api.datastore.Entity(kind);
         }
-        entity.setUnindexedProperty("myPageDescription", stringToText(m.getMyPageDescription()));
-        entity.setProperty("myPageTitle", m.getMyPageTitle());
-        entity.setProperty("myPageType", m.getMyPageType());
-        entity.setUnindexedProperty("profile", stringToText(m.getProfile()));
         entity.setProperty("version", m.getVersion());
         entity.setProperty("slim3.schemaVersion", 1);
         return entity;
@@ -125,24 +105,6 @@ public final class ConfigMeta extends org.slim3.datastore.ModelMeta<com.appspot.
             encoder = new org.slim3.datastore.json.Default();
             encoder.encode(writer, m.getKey());
         }
-        if(m.getMyPageDescription() != null){
-            writer.setNextPropertyName("myPageDescription");
-            encoder = new org.slim3.datastore.json.Default();
-            encoder.encode(writer, m.getMyPageDescription());
-        }
-        if(m.getMyPageTitle() != null){
-            writer.setNextPropertyName("myPageTitle");
-            encoder = new org.slim3.datastore.json.Default();
-            encoder.encode(writer, m.getMyPageTitle());
-        }
-        writer.setNextPropertyName("myPageType");
-        encoder = new org.slim3.datastore.json.Default();
-        encoder.encode(writer, m.getMyPageType());
-        if(m.getProfile() != null){
-            writer.setNextPropertyName("profile");
-            encoder = new org.slim3.datastore.json.Default();
-            encoder.encode(writer, m.getProfile());
-        }
         if(m.getVersion() != null){
             writer.setNextPropertyName("version");
             encoder = new org.slim3.datastore.json.Default();
@@ -159,18 +121,6 @@ public final class ConfigMeta extends org.slim3.datastore.ModelMeta<com.appspot.
         reader = rootReader.newObjectReader("key");
         decoder = new org.slim3.datastore.json.Default();
         m.setKey(decoder.decode(reader, m.getKey()));
-        reader = rootReader.newObjectReader("myPageDescription");
-        decoder = new org.slim3.datastore.json.Default();
-        m.setMyPageDescription(decoder.decode(reader, m.getMyPageDescription()));
-        reader = rootReader.newObjectReader("myPageTitle");
-        decoder = new org.slim3.datastore.json.Default();
-        m.setMyPageTitle(decoder.decode(reader, m.getMyPageTitle()));
-        reader = rootReader.newObjectReader("myPageType");
-        decoder = new org.slim3.datastore.json.Default();
-        m.setMyPageType(decoder.decode(reader, m.getMyPageType()));
-        reader = rootReader.newObjectReader("profile");
-        decoder = new org.slim3.datastore.json.Default();
-        m.setProfile(decoder.decode(reader, m.getProfile()));
         reader = rootReader.newObjectReader("version");
         decoder = new org.slim3.datastore.json.Default();
         m.setVersion(decoder.decode(reader, m.getVersion()));

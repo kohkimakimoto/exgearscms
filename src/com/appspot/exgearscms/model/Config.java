@@ -20,54 +20,10 @@ public class Config implements Serializable {
     @Attribute(version = true)
     private Long version;
 
-    /** マイページのタイトル */
-    private String myPageTitle;
-
-    /** マイページの説明 */
-    @Attribute(lob = true)
-    private String myPageDescription;
-
-    private int myPageType;
-
-    @Attribute(lob = true)
-    private String profile;
-
     public void save() {
         Transaction tx = Datastore.beginTransaction();
         Datastore.put(this);
         tx.commit();
-    }
-
-    public String getMyPageTitle() {
-        return myPageTitle;
-    }
-
-    public void setMyPageTitle(String myPageTitle) {
-        this.myPageTitle = myPageTitle;
-    }
-
-    public String getMyPageDescription() {
-        return myPageDescription;
-    }
-
-    public void setMyPageDescription(String myPageDescription) {
-        this.myPageDescription = myPageDescription;
-    }
-
-    public int getMyPageType() {
-        return myPageType;
-    }
-
-    public void setMyPageType(int myPageType) {
-        this.myPageType = myPageType;
-    }
-
-    public String getProfile() {
-        return profile;
-    }
-
-    public void setProfile(String profile) {
-        this.profile = profile;
     }
 
     /**

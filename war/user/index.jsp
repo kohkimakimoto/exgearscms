@@ -9,14 +9,14 @@
 <c:param name="content" >
   <div class="content-top">
     <div class="breadcrumb">
-      <a href="/">トップページ</a>&nbsp;≫&nbsp;<span>${webUser.uid}さんのページ</span>
+      <a href="/">トップページ</a>&nbsp;≫&nbsp;<span>${f:h(webUser.webUserConfig.nickname)}さんのページ</span>
     </div>
   </div>
   <div class="content-left">
     <div class="cbox2">
       <div class="inner">
-        <h1>${f:h(webUser.config.myPageTitle)}</h1>
-        ${f:h(webUser.config.myPageDescription)}
+        <h1>${f:h(webUser.myPageConfig.title)}</h1>
+        ${f:h(webUser.myPageConfig.description)}
       </div>
     </div>
     <c:forEach var="article" items="${articleList}" >
