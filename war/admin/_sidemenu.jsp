@@ -25,7 +25,6 @@ String path = (String)request.getAttribute("location");
     </ul>
     <% }%>
   </li>
--->
   <li class="root"><a class="<% if (path.indexOf("/admin/widget/") != -1) out.print("on");%>" href="/admin/widget/">ウィジェット</a>
     <% if (path.indexOf("/admin/widget/") != -1) { %>
     <ul class="child">
@@ -34,7 +33,7 @@ String path = (String)request.getAttribute("location");
     </ul>
     <% }%>
   </li>
-
+-->
   <li class="root"><a class="<% if (path.indexOf("/admin/config/") != -1) out.print("on");%>" href="/admin/config/">設定</a>
     <% if (path.indexOf("/admin/config/") != -1) { %>
     <ul class="child">

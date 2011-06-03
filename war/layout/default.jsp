@@ -14,7 +14,7 @@
 <script type="text/javascript" src="/static/default/js/jquery.plugin.js"></script>
 <script type="text/javascript" src="/static/default/js/global.js"></script>
 <title>${param.title}</title>
-<c:import url="/_ga.jsp" />
+<c:import url="/components/_ga.jsp" />
 </head>
 <body>
 <div class="container">

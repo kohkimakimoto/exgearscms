@@ -2,7 +2,7 @@
 
 body {
 background-color: #ffffff; margin:0; padding:0;
-font: 13px Arial,sans-serif;
+font: 12px Arial,sans-serif;
 }
 ul {padding: 0; margin:0;}
 ul li {list-style: none outside none;}
@@ -243,7 +243,7 @@ border-radius: 5px;
 padding: 10px;
 background: #ffffff;
 margin-bottom: 10px;
-font-size: 14px;
+font-size: 12px;
 
 }
 .body-admin .content .sidemenu .inner{
@@ -252,11 +252,11 @@ font-size: 14px;
 .body-admin .content .sidemenu li.root {
 padding: 2px 0;
 border-bottom: 1px solid #ececec;
-font-size: 13px;
+font-size: 12px;
 }
 
 .body-admin .content .sidemenu li.root a {
-padding: 7px 5px 7px 5px;
+padding: 5px 5px 5px 5px;
 text-decoration: none;
 display: block;
 }
@@ -275,7 +275,7 @@ border-radius: 5px;
 
 .body-admin .content .sidemenu ul.child li {
 padding: 2px 0 2px 15px;
-font-size: 13px;
+font-size: 12px;
 }
 
 .body-admin .content .sidemenu ul.child li a {
@@ -485,7 +485,7 @@ margin: 0 0 0 160px;
 .body-admin .content .form-wrapper .record div.input input.text {
 width: 320px;
 background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
-padding: 7px 2px;
+padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
 font-size: 14px;
@@ -496,7 +496,7 @@ font: 13px Arial,sans-serif;
 width: 420px;
 height: 100px;
 background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
-padding: 7px 2px;
+padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
 font-size: 14px;
@@ -544,7 +544,7 @@ margin: 2px 0 0 0;
 .body-admin .content .form-post-wrapper .record div.input input.text {
 width: 520px;
 background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
-padding: 7px 2px;
+padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
 font-size: 14px;
