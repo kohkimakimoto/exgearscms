@@ -4,3 +4,4 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <c:import url="/widgets/_userinfo.jsp"></c:import>
 <c:import url="/widgets/_newarticles.jsp"></c:import>
+<c:import url="/widgets/_twitter.jsp"></c:import>
