@@ -21,4 +21,14 @@
     </example>
   </function>
 
+  <function>
+    <description></description>
+    <name>escapeScript</name>
+    <function-class>com.appspot.exgearscms.helper.Functions</function-class>
+    <function-signature>java.lang.String escapeScript(java.lang.String)</function-signature>
+    <example>
+      ${func:tuncate(param)}
+    </example>
+  </function>
+
 </taglib>

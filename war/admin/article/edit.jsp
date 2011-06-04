@@ -9,10 +9,6 @@
     <c:import url="/admin/_sidemenu.jsp" />
   </div>
   <div class="content-right">
-    <div class="breadcrumb">
-      <a href="/admin/">ダッシュボード</a>»
-      <a href="/admin/article/">記事</a>»
-    </div>
     <h1 class="h1-content">記事を編集</h1>
     <c:import url="/admin/_messages.jsp" />
     <div class="form-post-wrapper">

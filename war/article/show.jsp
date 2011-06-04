@@ -3,6 +3,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
+<%@taglib prefix="func" uri="/helper/functions"%>
 <c:import url="/layout/default.jsp">
 <c:param name="title" value="ExGearsCMS"/>
 <c:param name="content" >
@@ -18,7 +19,7 @@
          <div>
            ${article.createdAt}
          </div>
-        ${article.text}
+        ${func:escapeScript(article.text)}
       </div>
     </div>
   </div>

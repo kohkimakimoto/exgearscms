@@ -9,9 +9,6 @@
     <c:import url="/admin/_sidemenu.jsp" />
   </div>
   <div class="content-right">
-    <div class="breadcrumb">
-      <a href="/admin/">ダッシュボード</a>»
-    </div>
     <h1 class="h1-config">マイページ設定</h1>
     <c:import url="/admin/_messages.jsp" />
     <div class="form-wrapper">

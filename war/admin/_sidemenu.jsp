@@ -42,7 +42,6 @@ String path = (String)request.getAttribute("location");
     </ul>
     <% }%>
   </li>
-  <li class="root"><a href="${user.logoutUrl}">ログアウト</a></li>
 </ul>
 </div></div>
 

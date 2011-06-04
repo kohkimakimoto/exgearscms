@@ -9,9 +9,7 @@
     <c:import url="/admin/_sidemenu.jsp" />
   </div>
   <div class="content-right">
-    <div class="breadcrumb">
-    </div>
-    <h1 class="h1-content">ダッシュボード</h1>
+    <h1>ダッシュボード</h1>
     <div class="cbox1">
       ダッシュボードの機能は開発中です。
     </div>
