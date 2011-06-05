@@ -1,20 +1,24 @@
 package com.appspot.exgearscms.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.appspot.exgearscms.cool.util.MD5Util;
 import com.appspot.exgearscms.model.config.MyPageConfig;
 import com.appspot.exgearscms.model.config.WebUserConfig;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.Datastore;
+import org.slim3.datastore.InverseModelListRef;
 import org.slim3.datastore.Model;
 import org.slim3.datastore.ModelRef;
+import org.slim3.datastore.Sort;
 
 @Model(schemaVersion = 1)
 public class WebUser implements Serializable {
@@ -42,11 +46,13 @@ public class WebUser implements Serializable {
     @Attribute(persistent = false)
     private User guser = null;
 
-    private ModelRef<Config> configRef = new ModelRef<Config>(Config.class);
-
     private ModelRef<MyPageConfig> myPageConfigRef = new ModelRef<MyPageConfig>(MyPageConfig.class);
 
     private ModelRef<WebUserConfig> webUserConfigRef = new ModelRef<WebUserConfig>(WebUserConfig.class);
+
+    @Attribute(persistent = false)
+    private InverseModelListRef<Widget, WebUser> widgetListRef =
+        new InverseModelListRef<Widget, WebUser>(Widget.class, "webUserRef", this, new Sort("dispOrder", SortDirection.ASCENDING));
 
     public void save() {
         Transaction tx = Datastore.beginTransaction();
@@ -179,18 +185,6 @@ public class WebUser implements Serializable {
         return admin;
     }
 
-    public ModelRef<Config> getConfigRef() {
-        return configRef;
-    }
-
-    public Config getConfig() {
-        return getConfigRef().getModel();
-    }
-
-    public void setConfig(Config config) {
-        getConfigRef().setModel(config);
-    }
-
     public MyPageConfig getMyPageConfig() {
         return getMyPageConfigRef().getModel();
     }
@@ -205,6 +199,10 @@ public class WebUser implements Serializable {
 
     public void setWebUserConfig(WebUserConfig webUserConfig) {
         getWebUserConfigRef().setModel(webUserConfig);
+    }
+
+    public List<Widget> getWidgetList() {
+        return getWidgetListRef().getModelList();
     }
 
     public void setName(String name) {
@@ -250,5 +248,10 @@ public class WebUser implements Serializable {
         String url = "http://www.gravatar.com/avatar/";
         return url + hash;
     }
+
+    public InverseModelListRef<Widget, WebUser> getWidgetListRef() {
+        return widgetListRef;
+    }
+
 
 }

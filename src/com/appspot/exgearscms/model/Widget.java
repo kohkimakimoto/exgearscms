@@ -1,18 +1,18 @@
-package com.appspot.exgearscms.model.config;
+package com.appspot.exgearscms.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
-import com.appspot.exgearscms.model.WebUser;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.Datastore;
-import org.slim3.datastore.InverseModelRef;
 import org.slim3.datastore.Model;
+import org.slim3.datastore.ModelRef;
 
 @Model(schemaVersion = 1)
-public class MyPageConfig implements Serializable {
+public class Widget implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,15 +22,11 @@ public class MyPageConfig implements Serializable {
     @Attribute(version = true)
     private Long version;
 
-    /** マイページのタイトル */
-    private String title;
+    private boolean active;
 
-    /** マイページの説明 */
-    @Attribute(lob = true)
-    private String description;
+    private int dispOrder;
 
-    @Attribute(persistent = false)
-    private InverseModelRef<WebUser, MyPageConfig> webUserRef = new InverseModelRef<WebUser, MyPageConfig>(WebUser.class, "myPageConfigRef", this);
+    private ModelRef<WebUser> webUserRef = new ModelRef<WebUser>(WebUser.class);
 
     public void save() {
         Transaction tx = Datastore.beginTransaction();
@@ -95,7 +91,7 @@ public class MyPageConfig implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        MyPageConfig other = (MyPageConfig) obj;
+        Widget other = (Widget) obj;
         if (key == null) {
             if (other.key != null) {
                 return false;
@@ -106,23 +102,23 @@ public class MyPageConfig implements Serializable {
         return true;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public InverseModelRef<WebUser, MyPageConfig> getWebUserRef() {
+    public ModelRef<WebUser> getWebUserRef() {
         return webUserRef;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setDispOrder(int dispOrder) {
+        this.dispOrder = dispOrder;
+    }
+
+    public int getDispOrder() {
+        return dispOrder;
     }
 }

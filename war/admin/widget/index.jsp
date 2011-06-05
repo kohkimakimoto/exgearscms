@@ -9,46 +9,53 @@
     <c:import url="/admin/_sidemenu.jsp" />
   </div>
   <div class="content-right">
-    <div class="breadcrumb">
-      <a href="/admin/">ダッシュボード</a>»
+    <h1 class="h1-widget">ウィジェット</h1>
+    <div class="description">
+      「ウィジェット」はページのサイドに表示される各種パーツです。いわゆるブログパーツとかそういうやつです。
     </div>
-    <h1 class="h1-content">ウィジェット</h1>
-    <c:import url="/admin/_pager.jsp" >
-      <c:param name="page" value="${page}"/>
-    </c:import>
+
+
     <div class="content-table-wrapper">
     <table class="content-table stripe">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>ウィジェット</th>
-          <th>編集</th>
+          <th>利用中のウィジェット</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <c:forEach var="var" items="${pager.results}">
+        <c:forEach var="var" items="${user.widgetList}">
         <tr>
-          <td valign="top" class="first minrow">
-            ${f:h(var.key.id)}
+          <td valign="top" >
+            <div>ユーザ情報</div>
+            <div><a href="/admin/widget/status">有効</a></div>
           </td>
-          <td valign="top" class="minrow">
-            <div>${f:h(var.createdAt)}</div>
-            <div>${f:h(var.title)}</div>
-          </td>
-          <td valign="top" class="">
-            <a target="_blank" href="${f:h(var.url)}">${f:h(var.url)}</a>
-          </td>
-          <td valign="top" class="minrow">
-            <a href="/admin/article/edit?id=${f:h(var.key.id)}">編集</a>
-          </td>
+          <td valign="top" >プロフィールとアバター画像が表示される。</td>
         </tr>
         </c:forEach>
       </tbody>
     </table>
     </div>
-    <c:import url="/admin/_pager.jsp" >
-      <c:param name="page" value="${page}"/>
-    </c:import>
+    <div class="content-block-wrapper">
+      <div class="content-block-header">利用可能なウィジェット</div>
+      <div class="description">
+        クリックして該当のウィジェットを追加。
+      </div>
+      <div class="content-block"><div class="inner">
+        <div class="name"><a href="/admin/widget/userinfo/new">ユーザ情報</a></div>
+        <div>プロフィールとアバター画像が表示される。</div>
+      </div></div>
+
+      <div class="content-block"><div class="inner">
+        <div class="name"><a href="/admin/widget/newarticles/new">新着記事</a></div>
+        <div>新着記事10件のタイトルが表示される。</div>
+      </div></div>
+
+      <div class="content-block"><div class="inner">
+        <div class="name"><a href="/admin/widget/twitter/new">ツイッターWidget</a></div>
+        <div>自分のツイートが表示されるやつ。ツイッター公式で用意されてるJavaScriptのやつです。</div>
+      </div></div>
+    </div>
   </div>
 </c:param>
 </c:import>

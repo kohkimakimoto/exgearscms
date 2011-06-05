@@ -2,11 +2,13 @@ package com.appspot.exgearscms.model.config;
 
 import java.io.Serializable;
 
+import com.appspot.exgearscms.model.WebUser;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.Datastore;
+import org.slim3.datastore.InverseModelRef;
 import org.slim3.datastore.Model;
 
 @Model(schemaVersion = 1)
@@ -26,6 +28,9 @@ public class WebUserConfig implements Serializable {
 
     @Attribute(lob = true)
     private String profile;
+
+    @Attribute(persistent = false)
+    private InverseModelRef<WebUser, WebUserConfig> webUserRef = new InverseModelRef<WebUser, WebUserConfig>(WebUser.class, "webUserConfigRef", this);
 
     public void save() {
         Transaction tx = Datastore.beginTransaction();
@@ -123,6 +128,10 @@ public class WebUserConfig implements Serializable {
 
     public String getGravatarEmail() {
         return gravatarEmail;
+    }
+
+    public InverseModelRef<WebUser, WebUserConfig> getWebUserRef() {
+        return webUserRef;
     }
 
 }

@@ -11,10 +11,13 @@
   </div>
   <div class="content-right">
     <h1 class="h1-content">記事</h1>
+    <div class="description">
+      「記事」はいわゆるプログ的なコンテンツです。ここには新着順に表示されます。
+    </div>
+    <div class="content-table-wrapper">
     <c:import url="/admin/_pager.jsp" >
       <c:param name="page" value="${page}"/>
     </c:import>
-    <div class="content-table-wrapper">
     <table class="content-table stripe">
       <thead>
         <tr>
@@ -38,10 +41,10 @@
         </c:forEach>
       </tbody>
     </table>
-    </div>
     <c:import url="/admin/_pager.jsp" >
       <c:param name="page" value="${page}"/>
     </c:import>
+    </div>
   </div>
 </c:param>
 </c:import>

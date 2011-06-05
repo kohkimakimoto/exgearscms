@@ -193,7 +193,7 @@ min-height: 32px;
 padding: 0 0 0 38px;
 }
 
-.body-admin .content .h1-component {
+.body-admin .content .h1-widget {
 background: url("../images/icon/joint-32x32.png") no-repeat;
 min-height: 32px;
 padding: 0 0 0 38px;
@@ -257,10 +257,25 @@ font-size: 12px;
 
 .body-admin .content .sidemenu li.root a {
 padding: 3px 5px 3px 20px;
-background: url('../images/icon/pict04_14x14.png') left center no-repeat #ffffff;
+background: url('../images/icon/gear-16x16.png') left center no-repeat #ffffff;
 text-decoration: none;
 display: block;
 }
+
+.body-admin .content .sidemenu li.root a.dashboard {
+background-image: url('../images/icon/gear-16x16.png');
+}
+.body-admin .content .sidemenu li.root a.article {
+background-image: url('../images/icon/text-16x16.png');
+}
+.body-admin .content .sidemenu li.root a.widget {
+background-image: url('../images/icon/joint-16x16.png');
+}
+.body-admin .content .sidemenu li.root a.config {
+background-image: url('../images/icon/gear2-16x16.png');
+}
+
+
 .body-admin .content .sidemenu li.root a:hover {
 background-color: #efefef;
 }
@@ -279,8 +294,9 @@ font-size: 12px;
 }
 
 .body-admin .content .sidemenu ul.child li a {
-padding: 2px 5px 2px 20px;
-background: url('../images/icon/pict04_14x14.png') left center no-repeat #ffffff;
+padding: 2px 5px 2px 5px;
+background-image: none;
+background-color: #ffffff;
 text-decoration: none;
 display: block;
 }
@@ -472,7 +488,7 @@ margin: 0 0 20px 0;
 .body-admin .content .form-wrapper .record label {
 width: 140px;
 float:left;
-font-size: 13px;
+font-size: 12px;
 padding-top: 4px;
 text-align: right;
 }
@@ -487,8 +503,7 @@ background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
-font-size: 14px;
-font: 13px Arial,sans-serif;
+font: 12px Arial,sans-serif;
 }
 
 .body-admin .content .form-wrapper .record div.input textarea {
@@ -498,8 +513,7 @@ background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
-font-size: 14px;
-font: 13px Arial,sans-serif;
+font: 12px Arial,sans-serif;
 }
 
 .body-admin .content .form-wrapper .action {
@@ -530,7 +544,7 @@ margin: 0 0 20px 10px;
 }
 
 .body-admin .content .form-post-wrapper .record label {
-font-size: 13px;
+font-size: 12px;
 padding: 0;
 text-align: right;
 }
@@ -545,8 +559,10 @@ background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 5px 5px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
-font-size: 14px;
-font: 13px Arial,sans-serif;
+font: 12px Arial,sans-serif;
+}
+.body-admin .content .form-post-wrapper .record div.input.short input.text {
+width: 100px;
 }
 
 .body-admin .content .form-post-wrapper .record div.input textarea {
@@ -556,8 +572,7 @@ background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 7px 2px;
 border: 1px solid #b1b1b1;
 vertical-align: middle;
-font-size: 14px;
-font: 13px Arial,sans-serif;
+font: 12px Arial,sans-serif;
 }
 
 .body-admin .content .form-post-wrapper .action {
@@ -565,6 +580,7 @@ margin: 0 0 20px 10px;
 }
 
 .body-admin .content .content-table-wrapper {
+margin-bottom: 20px;
 }
 
 .body-admin .content .content-table {
@@ -576,7 +592,7 @@ border-collapse: collapse; width: 100%; text-align: left;
 .body-admin .content .content-table tr th {
 background: #e3e3e3;
 padding: 7px 5px;
-font-size: 14px;
+font-size: 12px;
 font-weight: bold;
 white-space: nowrap;
 }
@@ -584,8 +600,8 @@ white-space: nowrap;
 .body-admin .content .content-table tr td {
 border-bottom: 1px solid #F1F1F1;
 padding: 10px 5px;
-font-size: 14px;
-white-space: nowrap;
+font-size: 12px;
+white-space: normal;
 }
 
 .body-admin .content .content-table tr.even td {
@@ -625,6 +641,40 @@ text-decoration: none;
 text-decoration: underline;
 }
 
+.body-admin .content .content-block-wrapper {
+margin-bottom: 10px;
+}
+
+.body-admin .content .content-block-header {
+background: #e3e3e3;
+padding: 7px 5px;
+font-size: 12px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.body-admin .content .content-block {
+width: 190px;
+float: left;
+
+}
+
+.body-admin .content .content-block .inner{
+border: 1px solid #e3e3e3;
+margin: 0 10px 10px 0;
+padding: 10px;
+}
+
+.body-admin .content .content-block .name {
+margin-bottom: 10px;
+}
+
+.body-admin .content .description {
+border: 1px solid #e3e3e3;
+padding: 10px;
+margin: 10px 0 10px 0;
+color: #9a9a9a;
+}
 
 .body-admin .footer {
 clear: both;

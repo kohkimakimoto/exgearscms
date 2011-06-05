@@ -1,6 +1,6 @@
 package com.appspot.exgearscms.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-03 01:32:18")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2011-06-06 01:25:49")
 /** */
 public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot.exgearscms.model.WebUser> {
 
@@ -12,9 +12,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
 
     /** */
     public final org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.WebUser, java.lang.Boolean> authenticated = new org.slim3.datastore.CoreAttributeMeta<com.appspot.exgearscms.model.WebUser, java.lang.Boolean>(this, "authenticated", "authenticated", boolean.class);
-
-    /** */
-    public final org.slim3.datastore.ModelRefAttributeMeta<com.appspot.exgearscms.model.WebUser, org.slim3.datastore.ModelRef<com.appspot.exgearscms.model.Config>, com.appspot.exgearscms.model.Config> configRef = new org.slim3.datastore.ModelRefAttributeMeta<com.appspot.exgearscms.model.WebUser, org.slim3.datastore.ModelRef<com.appspot.exgearscms.model.Config>, com.appspot.exgearscms.model.Config>(this, "configRef", "configRef", org.slim3.datastore.ModelRef.class, com.appspot.exgearscms.model.Config.class);
 
     /** */
     public final org.slim3.datastore.StringAttributeMeta<com.appspot.exgearscms.model.WebUser> email = new org.slim3.datastore.StringAttributeMeta<com.appspot.exgearscms.model.WebUser>(this, "email", "email");
@@ -57,10 +54,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
         model.setActive(booleanToPrimitiveBoolean((java.lang.Boolean) entity.getProperty("active")));
         model.setAdmin(booleanToPrimitiveBoolean((java.lang.Boolean) entity.getProperty("admin")));
         model.setAuthenticated(booleanToPrimitiveBoolean((java.lang.Boolean) entity.getProperty("authenticated")));
-        if (model.getConfigRef() == null) {
-            throw new NullPointerException("The property(configRef) is null.");
-        }
-        model.getConfigRef().setKey((com.google.appengine.api.datastore.Key) entity.getProperty("configRef"));
         model.setEmail((java.lang.String) entity.getProperty("email"));
         model.setKey(entity.getKey());
         if (model.getMyPageConfigRef() == null) {
@@ -89,10 +82,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
         entity.setProperty("active", m.isActive());
         entity.setProperty("admin", m.isAdmin());
         entity.setProperty("authenticated", m.isAuthenticated());
-        if (m.getConfigRef() == null) {
-            throw new NullPointerException("The property(configRef) must not be null.");
-        }
-        entity.setProperty("configRef", m.getConfigRef().getKey());
         entity.setProperty("email", m.getEmail());
         if (m.getMyPageConfigRef() == null) {
             throw new NullPointerException("The property(myPageConfigRef) must not be null.");
@@ -131,10 +120,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
     @Override
     protected void assignKeyToModelRefIfNecessary(com.google.appengine.api.datastore.AsyncDatastoreService ds, java.lang.Object model) {
         com.appspot.exgearscms.model.WebUser m = (com.appspot.exgearscms.model.WebUser) model;
-        if (m.getConfigRef() == null) {
-            throw new NullPointerException("The property(configRef) must not be null.");
-        }
-        m.getConfigRef().assignKeyIfNecessary(ds);
         if (m.getMyPageConfigRef() == null) {
             throw new NullPointerException("The property(myPageConfigRef) must not be null.");
         }
@@ -185,11 +170,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
         writer.setNextPropertyName("authenticated");
         encoder = new org.slim3.datastore.json.Default();
         encoder.encode(writer, m.isAuthenticated());
-        if(m.getConfigRef() != null && m.getConfigRef().getKey() != null){
-            writer.setNextPropertyName("configRef");
-            encoder = new org.slim3.datastore.json.Default();
-            encoder.encode(writer, m.getConfigRef(), maxDepth, currentDepth);
-        }
         if(m.getEmail() != null){
             writer.setNextPropertyName("email");
             encoder = new org.slim3.datastore.json.Default();
@@ -230,6 +210,11 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
             encoder = new org.slim3.datastore.json.Default();
             encoder.encode(writer, m.getWebUserConfigRef(), maxDepth, currentDepth);
         }
+        if(m.getWidgetListRef() != null){
+            writer.setNextPropertyName("widgetListRef");
+            encoder = new org.slim3.datastore.json.Default();
+            encoder.encode(writer, m.getWidgetListRef());
+        }
         writer.endObject();
     }
 
@@ -247,9 +232,6 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
         reader = rootReader.newObjectReader("authenticated");
         decoder = new org.slim3.datastore.json.Default();
         m.setAuthenticated(decoder.decode(reader, m.isAuthenticated()));
-        reader = rootReader.newObjectReader("configRef");
-        decoder = new org.slim3.datastore.json.Default();
-        decoder.decode(reader, m.getConfigRef(), maxDepth, currentDepth);
         reader = rootReader.newObjectReader("email");
         decoder = new org.slim3.datastore.json.Default();
         m.setEmail(decoder.decode(reader, m.getEmail()));
@@ -274,6 +256,8 @@ public final class WebUserMeta extends org.slim3.datastore.ModelMeta<com.appspot
         reader = rootReader.newObjectReader("webUserConfigRef");
         decoder = new org.slim3.datastore.json.Default();
         decoder.decode(reader, m.getWebUserConfigRef(), maxDepth, currentDepth);
+        reader = rootReader.newObjectReader("widgetListRef");
+        decoder = new org.slim3.datastore.json.Default();
         return m;
     }
 }

@@ -26,7 +26,7 @@
           <div>
             ${article.createdAt}
           </div>
-          ${func:truncate(article.text, 100, "...")}
+          ${func:escapeScript(func:truncate(article.text, 100, "..."))}
           <div>
             <a href="${article.url}">続きを読む</a>
           </div>

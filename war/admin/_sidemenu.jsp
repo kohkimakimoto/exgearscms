@@ -7,8 +7,8 @@ String path = (String)request.getAttribute("location");
 %>
 <div class="sidemenu"><div class="inner">
 <ul>
-  <li class="root"><a class="<% if (path.equals("/admin/")) out.print("on");%>" href="/admin/">ダッシュボード</a></li>
-  <li class="root"><a class="<% if (path.indexOf("/admin/article/") != -1) out.print("on");%>" href="/admin/article/">記事</a>
+  <li class="root"><a class="dashboard <% if (path.equals("/admin/")) out.print("on");%>" href="/admin/">ダッシュボード</a></li>
+  <li class="root"><a class="article <% if (path.indexOf("/admin/article/") != -1) out.print("on");%>" href="/admin/article/">記事</a>
     <% if (path.indexOf("/admin/article/") != -1) { %>
     <ul class="child">
       <li><a class="<% if (path.equals("/admin/article/") || path.equals("/admin/article/edit")) out.print("on");%>" href="/admin/article/">記事</a></li>
@@ -25,16 +25,16 @@ String path = (String)request.getAttribute("location");
     </ul>
     <% }%>
   </li>
-  <li class="root"><a class="<% if (path.indexOf("/admin/widget/") != -1) out.print("on");%>" href="/admin/widget/">ウィジェット</a>
+-->
+
+  <li class="root"><a class="widget <% if (path.indexOf("/admin/widget/") != -1) out.print("on");%>" href="/admin/widget/">ウィジェット</a>
     <% if (path.indexOf("/admin/widget/") != -1) { %>
     <ul class="child">
-      <li><a class="<% if (path.equals("/admin/widget/")) out.print("on");%>" href="/admin/widget/">ウィジェット</a></li>
-      <li><a class="<% if (path.equals("/admin/widget/new")) out.print("on");%>" href="/admin/widget/new">新規作成</a></li>
+      <li><a class="<% if (path.indexOf("/admin/widget/") != -1) out.print("on");%>" href="/admin/widget/">ウィジェット</a></li>
     </ul>
     <% }%>
   </li>
--->
-  <li class="root"><a class="<% if (path.indexOf("/admin/config/") != -1) out.print("on");%>" href="/admin/config/">設定</a>
+  <li class="root"><a class="config <% if (path.indexOf("/admin/config/") != -1) out.print("on");%>" href="/admin/config/">設定</a>
     <% if (path.indexOf("/admin/config/") != -1) { %>
     <ul class="child">
       <li><a class="<% if (path.equals("/admin/config/mypage")) out.print("on");%>" href="/admin/config/mypage">マイページ設定</a></li>
