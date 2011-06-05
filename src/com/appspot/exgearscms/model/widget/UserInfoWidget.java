@@ -8,5 +8,15 @@ public class UserInfoWidget extends Widget {
 
     private static final long serialVersionUID = 1L;
 
+    @Override
+    public String getName() {
+        return "userinfo";
+    }
+
+    @Override
+    public String getDisplayName() {
+        return "ユーザ情報";
+    }
+
 
 }

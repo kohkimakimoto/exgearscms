@@ -13,24 +13,23 @@
     <div class="description">
       「ウィジェット」はページのサイドに表示される各種パーツです。いわゆるブログパーツとかそういうやつです。
     </div>
-
-
     <div class="content-table-wrapper">
     <table class="content-table stripe">
       <thead>
         <tr>
-          <th>利用中のウィジェット</th>
-          <th></th>
+          <th colspan="2">利用中のウィジェット</th>
         </tr>
       </thead>
       <tbody>
         <c:forEach var="var" items="${user.widgetList}">
         <tr>
-          <td valign="top" >
-            <div>ユーザ情報</div>
-            <div><a href="/admin/widget/status">有効</a></div>
+          <td valign="top" class="first minrow">
+            ${var.dispOrder}
           </td>
-          <td valign="top" >プロフィールとアバター画像が表示される。</td>
+          <td valign="top" >
+            <div>${var.displayName}</div>
+            <div><a href="/admin/widget/${var.name}/edit?id=${f:h(var.key.id)}">編集</a></div>
+          </td>
         </tr>
         </c:forEach>
       </tbody>
@@ -38,9 +37,6 @@
     </div>
     <div class="content-block-wrapper">
       <div class="content-block-header">利用可能なウィジェット</div>
-      <div class="description">
-        クリックして該当のウィジェットを追加。
-      </div>
       <div class="content-block"><div class="inner">
         <div class="name"><a href="/admin/widget/userinfo/new">ユーザ情報</a></div>
         <div>プロフィールとアバター画像が表示される。</div>

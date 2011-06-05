@@ -12,7 +12,7 @@ import org.slim3.datastore.Model;
 import org.slim3.datastore.ModelRef;
 
 @Model(schemaVersion = 1)
-public class Widget implements Serializable {
+public abstract class Widget implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -22,8 +22,6 @@ public class Widget implements Serializable {
     @Attribute(version = true)
     private Long version;
 
-    private boolean active;
-
     private int dispOrder;
 
     private ModelRef<WebUser> webUserRef = new ModelRef<WebUser>(WebUser.class);
@@ -32,6 +30,10 @@ public class Widget implements Serializable {
         Transaction tx = Datastore.beginTransaction();
         Datastore.put(this);
         tx.commit();
+    }
+
+    public void delete() {
+        Datastore.delete(this.getKey());
     }
 
     /**
@@ -106,14 +108,6 @@ public class Widget implements Serializable {
         return webUserRef;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
     public void setDispOrder(int dispOrder) {
         this.dispOrder = dispOrder;
     }
@@ -121,4 +115,9 @@ public class Widget implements Serializable {
     public int getDispOrder() {
         return dispOrder;
     }
+
+    public abstract String getDisplayName();
+
+    public abstract String getName();
+
 }
