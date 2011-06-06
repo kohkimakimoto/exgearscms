@@ -13,6 +13,8 @@ List<Widget> widgetList = webUser.getWidgetList();
 for (Widget wiget : widgetList) {
     String name = wiget.getName();
     pageContext.setAttribute("widgetJspURL", "/widgets/_" + name + ".jsp");
+    request.setAttribute("widget", wiget);
 %>
-<c:import url="${widgetJspURL}"></c:import>
+<c:import url="${widgetJspURL}">
+</c:import>
 <%}%>

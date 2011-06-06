@@ -1,14 +1,14 @@
-<!-- Indices written at Sun, 5 Jun 2011 17:45:27 UTC -->
+<!-- Indices written at Mon, 6 Jun 2011 15:19:52 UTC -->
 
 <datastore-indexes>
 
-    <!-- Used 9 times in query history -->
+    <!-- Used 16 times in query history -->
     <datastore-index kind="Widget" ancestor="false" source="auto">
         <property name="webUserRef" direction="asc"/>
         <property name="dispOrder" direction="asc"/>
     </datastore-index>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 41 times in query history -->
     <datastore-index kind="Article" ancestor="false" source="auto">
         <property name="webUserRef" direction="asc"/>
         <property name="createdAt" direction="desc"/>

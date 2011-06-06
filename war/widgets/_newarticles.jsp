@@ -15,6 +15,7 @@ ArticleService articleService = new ArticleService();
 List<Article> articleList =  articleService.getArticleList(10, webUser);
 
 pageContext.setAttribute("articleList", articleList);
+
 if (articleList.size() == 0) {
     return;
 }
@@ -23,7 +24,7 @@ if (articleList.size() == 0) {
   <div class="inner">
     <div class="subject">新着記事</div>
     <ul>
-    <c:forEach var="article" items="${articleList}" >
+    <c:forEach var="article" items="${articleList}"  begin="0"  end="${widget.maxSize - 1}">
       <li><a href="${f:h(article.url)}">${f:h(article.title)}</a></li>
     </c:forEach>
     </ul>
