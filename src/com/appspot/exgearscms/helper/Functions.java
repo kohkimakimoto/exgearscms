@@ -33,15 +33,16 @@ public class Functions {
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i];
 
-            if (line.indexOf("* ") == 0) {
+            if (line.indexOf("**") == 0) {
+                ret.append(h3(line));
+                continue;
+            }
+
+            if (line.indexOf("*") == 0) {
                 ret.append(h2(line));
                 continue;
             }
 
-            if (line.indexOf("** ") == 0) {
-                ret.append(h3(line));
-                continue;
-            }
 
             if (i != (lines.length - 1)) {
                 ret.append(br(line));
@@ -55,11 +56,11 @@ public class Functions {
     }
 
     private static String h2(String str) {
-        return "<h2>" + str.substring(2) + "</h2>\n";
+        return "<h2>" + str.substring(1) + "</h2>\n";
     }
 
     private static String h3(String str) {
-        return "<h3>" + str.substring(3) + "</h3>\n";
+        return "<h3>" + str.substring(2) + "</h3>\n";
     }
 
     private static String br(String str) {
