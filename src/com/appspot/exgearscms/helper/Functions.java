@@ -31,42 +31,47 @@ public class Functions {
 
         String lines[] = str.split("\r\n");
         for (int i = 0; i < lines.length; i++) {
-            String line = lines[i];
+            String line = lines[i].trim();
 
             if (line.indexOf("**") == 0) {
-                ret.append(h3(line));
+                ret.append(htmlh3(line));
                 continue;
             }
 
             if (line.indexOf("*") == 0) {
-                ret.append(h2(line));
+                ret.append(htmlh2(line));
                 continue;
             }
 
-
-            if (i != (lines.length - 1)) {
-                ret.append(br(line));
+            if (line.length() > 0) {
+                ret.append(htmlp(line));
                 continue;
             }
 
+            if (line.length() == 0) {
+                ret.append(htmlbr());
+                continue;
+            }
             ret.append(line);
         }
 
         return ret.toString();
     }
 
-    private static String h2(String str) {
+    private static String htmlh2(String str) {
         return "<h2>" + str.substring(1) + "</h2>\n";
     }
 
-    private static String h3(String str) {
+    private static String htmlh3(String str) {
         return "<h3>" + str.substring(2) + "</h3>\n";
     }
 
-    private static String br(String str) {
-        return str + "<br />\n";
+    private static String htmlp(String str) {
+        return "<p>" + str + "</p>\n";
     }
 
-
+    private static String htmlbr() {
+        return "<br />";
+    }
 
 }

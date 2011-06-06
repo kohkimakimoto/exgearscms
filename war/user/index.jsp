@@ -23,10 +23,10 @@
       <div class="cbox1">
         <div class="inner">
           <h1>${f:h(article.title)}</h1>
-          <div>
+          <div style="padding-bottom: 10px;">
             ${article.createdAt}
           </div>
-          ${func:wiki(func:truncate(article.text, 100, "..."))}
+          ${func:wiki(func:truncate(article.text, 300, "..."))}
           <div>
             <a href="${article.url}">続きを読む</a>
           </div>

@@ -38,7 +38,7 @@
     </table>
     </div>
     <div class="content-block-wrapper">
-      <div class="content-block-header">利用可能なウィジェット<span style="font-size: 90%; font-weight: normal; margin-left: 10px;">※クリックして追加</span></div>
+      <div class="content-block-header">利用可能なウィジェット<span style="font-size: 90%; font-weight: normal; margin-left: 10px;">※クリックして利用中に追加</span></div>
       <div class="content-block"><div class="inner">
         <div class="name"><a href="/admin/widget/userinfo/new">ユーザ情報</a></div>
         <div>プロフィールとアバター画像が表示される。</div>
@@ -46,7 +46,7 @@
 
       <div class="content-block"><div class="inner">
         <div class="name"><a href="/admin/widget/newarticles/new">新着記事</a></div>
-        <div>新着記事10件のタイトルが表示される。</div>
+        <div>新着記事XX件のタイトルが表示される。</div>
       </div></div>
 
       <div class="content-block"><div class="inner">
