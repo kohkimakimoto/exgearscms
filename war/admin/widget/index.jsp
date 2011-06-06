@@ -27,8 +27,8 @@
             ${var.dispOrder}
           </td>
           <td valign="top" >
-            <div>${var.displayName}</div>
-            <div><a href="/admin/widget/${var.name}/edit?id=${f:h(var.key.id)}">編集</a></div>
+            <div><span style="font-weight: bold;">${var.displayName}</span>&nbsp;<a href="/admin/widget/${var.name}/edit?id=${f:h(var.key.id)}">編集</a></div>
+            <div style="padding-top: 10px;">${var.description}</div>
           </td>
         </tr>
         </c:forEach>

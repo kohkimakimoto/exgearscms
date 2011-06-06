@@ -27,5 +27,5 @@ new TWTR.Widget({
     avatars: false,
     behavior: 'default'
   }
-}).render().setUser('kohkimakimoto').start();
+}).render().setUser('${widget.account}').start();
 </script>

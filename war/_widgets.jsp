@@ -15,6 +15,7 @@ for (Widget wiget : widgetList) {
     pageContext.setAttribute("widgetJspURL", "/widgets/_" + name + ".jsp");
     request.setAttribute("widget", wiget);
 %>
-<c:import url="${widgetJspURL}">
-</c:import>
+<div style="margin-bottom: 10px;">
+<c:import url="${widgetJspURL}" />
+</div>
 <%}%>

@@ -27,9 +27,9 @@
         </div>
       </div>
       <div class="record">
-        <label for="maxSize">最大表示数</label>
+        <label for="maxSize">最大表示件数</label>
         <div class="input short">
-          <input id="dispOrder" class="text" type="text" ${f:text("maxSize")} />
+          <input id="maxSize" class="text" type="text" ${f:text("maxSize")} />
         </div>
       </div>
       <div class="action">

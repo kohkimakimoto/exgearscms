@@ -11,8 +11,8 @@
   <div class="content-right">
     <h1 class="h1-widget">ウィジェット</h1>
     <div class="form-post-wrapper">
-      <form action="/admin/widget/newarticles/edit?id=${f:h(widget.key.id)}" method="post">
-      <h2 class="section-title">新着記事</h2>
+      <form action="/admin/widget/twitter/new" method="post">
+      <h2 class="section-title">ツイッターWidget</h2>
       <div class="record">
        <ul class="error">
          <c:forEach var="e" items="${f:errors()}">
@@ -27,19 +27,13 @@
         </div>
       </div>
       <div class="record">
-        <label for="maxSize">最大表示件数</label>
+        <label for="account">Twitterアカウント</label>
         <div class="input short">
-          <input id="maxSize" class="text" type="text" ${f:text("maxSize")} />
+          <input id="account" class="text" type="text" ${f:text("account")} />
         </div>
       </div>
       <div class="action">
-        <input type="submit" value="保存する"/>
-      </div>
-      </form>
-
-      <form action="/admin/widget/delete?id=${f:h(widget.key.id)}" method="post">
-      <div class="action">
-        <input type="submit" value="削除する"/>
+        <input type="submit" value="追加する"/>
       </div>
       </form>
     </div>

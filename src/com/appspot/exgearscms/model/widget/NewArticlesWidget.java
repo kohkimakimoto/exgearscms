@@ -29,5 +29,10 @@ public class NewArticlesWidget extends Widget {
         return maxSize;
     }
 
+    @Override
+    public String getDescription() {
+        return "最大表示件数 " + maxSize;
+    }
+
 
 }

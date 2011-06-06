@@ -18,5 +18,10 @@ public class UserInfoWidget extends Widget {
         return "userinfo";
     }
 
+    @Override
+    public String getDescription() {
+        return "";
+    }
+
 
 }

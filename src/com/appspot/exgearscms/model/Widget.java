@@ -120,4 +120,5 @@ public abstract class Widget implements Serializable {
 
     public abstract String getName();
 
+    public abstract String getDescription();
 }
