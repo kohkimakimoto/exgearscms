@@ -23,4 +23,9 @@
         <property name="createdAt" direction="desc"/>
     </datastore-index>
 
+    <datastore-index kind="Widget" ancestor="false" source="auto">
+        <property name="webUserRef" direction="asc"/>
+        <property name="dispOrder" direction="asc"/>
+    </datastore-index>
+
 </datastore-indexes>
