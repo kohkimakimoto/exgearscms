@@ -19,7 +19,7 @@
          <div>
            ${article.createdAt}
          </div>
-        ${func:escapeScript(article.text)}
+        ${func:wiki(article.text)}
       </div>
     </div>
   </div>

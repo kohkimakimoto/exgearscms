@@ -30,7 +30,7 @@
       <div class="record">
         <label>記事本文</label>
         <div class="input">
-          <textarea class="mce" name="text">${f:h(text)}</textarea>
+          <textarea name="text">${f:h(text)}</textarea>
         </div>
       </div>
       <div class="action">
