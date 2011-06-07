@@ -22,7 +22,10 @@
          <div style="padding-bottom: 10px;">
            <c:import url="/article/_tools.jsp" />
          </div>
-        ${func:wiki(article.text)}
+         ${func:wiki(article.text)}
+         <div style="padding-bottom: 10px;">
+           <c:import url="/article/_comment.jsp" />
+         </div>
       </div>
     </div>
     <div class="prev">

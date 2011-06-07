@@ -6,6 +6,6 @@ public class Constants {
         super();
     }
 
-    public static final String baseUrl = "http://exegearscms.appspot.com";
+    public static final String baseUrl = "http://exgearscms.appspot.com";
 
 }
