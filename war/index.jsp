@@ -32,7 +32,9 @@
         <a href="/reg/register">アカウント登録</a><br />
         <h2>ソースコード。</h2>
         GitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
-        いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。いずれ汎用的に使えるバージョンを用意してブランチなどを切る予定です。<br />
+        いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。ベースURLの設定がhttp://exegearscms.appspot.comになっていたりするので、適宜書き換える必要があります。<br />
+        いずれ汎用的に使えるバージョンを用意してブランチなどを切る予定です。<br />
+        あとドキュメントとかもないです。<br />
         <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a>
         <h2>開発者のブログ。</h2>
         ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
