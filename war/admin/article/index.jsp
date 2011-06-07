@@ -3,6 +3,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@taglib prefix="func" uri="/helper/functions"%>
+<%@page import="com.appspot.exgearscms.cool.util.Constants"%>
 <c:import url="/admin/layout/default.jsp">
 <c:param name="title" value=""/>
 <c:param name="content">
@@ -33,7 +34,7 @@
           </td>
           <td valign="top" class="">
             <div>${f:h(var.createdAt)}<a style="margin-left: 10px; font-size: 85%;" href="/admin/article/edit?id=${f:h(var.key.id)}">編集</a></div>
-            <div style="padding: 0 0 10px 0;"><a style="color: #9999ff;" target="_blank" href="${f:h(var.url)}">${f:h(var.url)}</a></div>
+            <div style="padding: 0 0 10px 0;"><a style="color: #9999ff;" target="_blank" href="${f:h(var.url)}"><%=Constants.baseUrl%>${f:h(var.url)}</a></div>
             <div style="padding: 0 0 5px 0;">${f:h(var.title)}</div>
             <div style="font-size: 11px; color: #939393;">${f:h(var.text)}</div>
           </td>

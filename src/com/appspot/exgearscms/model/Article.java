@@ -3,6 +3,7 @@ package com.appspot.exgearscms.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.appspot.exgearscms.service.ArticleService;
 import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.Transaction;
 
@@ -148,5 +149,15 @@ public class Article implements Serializable {
 
     public Date getCreatedAt() {
         return createdAt;
+    }
+
+    public Article getNextArticle() {
+        ArticleService service = new ArticleService();
+        return service.getNextArticle(this);
+    }
+
+    public Article getPrevArticle() {
+        ArticleService service = new ArticleService();
+        return service.getPrevArticle(this);
     }
 }

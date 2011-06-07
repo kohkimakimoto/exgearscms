@@ -175,6 +175,19 @@ margin-right: 4px;
 text-decoration: none;
 }
 
+.prev {
+text-align: left;
+float: left;
+width: 200px;
+margin-bottom: 20px;
+}
+
+.next {
+text-align: right;
+float: right;
+width: 200px;
+margin-bottom: 20px;
+}
 
 
 .cms-desc {

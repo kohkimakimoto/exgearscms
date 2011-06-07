@@ -99,4 +99,17 @@ public class ArticleService {
         return getArticleById(Long.valueOf(id));
     }
 
+    public Article getNextArticle(Article article) {
+        WebUser webUser = article.getWebUser();
+        return Datastore.query(meta).filter(
+            meta.webUserRef.equal(webUser.getKey()),
+            meta.createdAt.greaterThan(article.getCreatedAt())).sort(meta.createdAt.asc).limit(1).asSingle();
+    }
+
+    public Article getPrevArticle(Article article) {
+        WebUser webUser = article.getWebUser();
+        return Datastore.query(meta).filter(
+            meta.webUserRef.equal(webUser.getKey()),
+            meta.createdAt.lessThan(article.getCreatedAt())).sort(meta.createdAt.desc).limit(1).asSingle();
+    }
 }

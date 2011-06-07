@@ -5,7 +5,7 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@taglib prefix="func" uri="/helper/functions"%>
 <c:import url="/layout/default.jsp">
-<c:param name="title" value="ExGearsCMS"/>
+<c:param name="title" value="${f:h(article.title)} | ${f:h(article.webUser.myPageConfig.title)}"/>
 <c:param name="content" >
   <div class="content-top">
     <div class="breadcrumb">
@@ -19,9 +19,25 @@
          <div style="padding-bottom: 10px;">
            ${article.createdAt}
          </div>
+         <div style="padding-bottom: 10px;">
+           <c:import url="/article/_tools.jsp" />
+         </div>
         ${func:wiki(article.text)}
       </div>
     </div>
+    <div class="prev">
+      <c:if test="${article.prevArticle != null}" >
+        ≪前の記事<br />
+        <a href="${article.prevArticle.url}">${article.prevArticle.title}</a>
+      </c:if>
+    </div>
+    <div class="next">
+      <c:if test="${article.nextArticle != null}" >
+        次の記事≫<br />
+        <a href="${article.nextArticle.url}">${article.nextArticle.title}</a>
+      </c:if>
+    </div>
+    <div style="clear: both;"></div>
   </div>
 
   <div class="content-right">

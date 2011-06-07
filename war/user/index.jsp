@@ -5,7 +5,7 @@
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@taglib prefix="func" uri="/helper/functions"%>
 <c:import url="/layout/default.jsp">
-<c:param name="title" value="ExGearsCMS"/>
+<c:param name="title" value="${f:h(webUser.myPageConfig.title)} - (${f:h(webUser.webUserConfig.nickname)}さんのページ) | EXGearsCMS"/>
 <c:param name="content" >
   <div class="content-top">
     <div class="breadcrumb">
