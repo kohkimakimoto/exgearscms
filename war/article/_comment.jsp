@@ -1,7 +1,7 @@
 <%@page pageEncoding="UTF-8" isELIgnored="false" session="false"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@page import="com.appspot.exgearscms.cool.util.Constants"%>
-<% if (Constants.disqusShortName != null && Constants.disqusShortName.equals("")) {  %>
+<% if (Constants.disqusShortName != null && !Constants.disqusShortName.equals("")) {  %>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
