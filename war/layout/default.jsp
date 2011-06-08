@@ -31,6 +31,9 @@
       <li>
         <a href="/p/terms">利用規約</a>
       </li>
+      <li>
+        <a href="/p/dev">開発方針</a>
+      </li>
       <c:if test="${user.authenticated}" >
       <li>
         <a href="/admin/">管理</a>

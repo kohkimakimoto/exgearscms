@@ -19,23 +19,24 @@
         そんでもって以下の特徴があります。
         <ul class="cms-desc">
           <li>Google App Engineで動作します。</li>
-          <li>Javaとslim3というフレームワークで構築されています。</li>
+          <li>Javaと<a href="http://sites.google.com/site/slim3appengine/">slim3</a>というフレームワークで構築されています。</li>
           <li>Googleアカウントでログインしてブログとか書けます。</li>
           <li><span style="font-weight: bold;">まだいろいろ開発中なので安定版はなかったりします。</span></li>
         </ul>
         <h2>このサイトについて。</h2>
         このサイト自体をExGearsCMSで動かしています。<br />
-        ExGearsCMSに関するブログやゆるーいブログサービスの提供などを行うつもりです。<br />
+        ゆるーいブログサービスの提供などを行うつもりです。<br />
         いちおう一般のユーザー登録機能がありますが、アプリがまだ安定していないので、投稿したデータ消えたりするかも。それを了承のうえで使ってくださいね。<br />
         <br />
         <a href="/p/terms">利用規約</a><br />
-        <a href="/reg/register">アカウント登録</a><br />
         <h2>ソースコード。</h2>
-        GitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
-        いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。ベースURLの設定がhttp://exegearscms.appspot.comになっていたりするので、適宜書き換える必要があります。<br />
+        ExGearsCMSはオープンソースなのです。<br />
+        ソースは公開しているのでほしい人はGitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
+        <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a><br />
+        <br />
+        <span style="font-weight: bold; color: red;">(注意)</span>いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。ベースURLの設定がhttp://exegearscms.appspot.comになっていたりするので、利用する場合は適宜書き換える必要があります。<br />
         いずれ汎用的に使えるバージョンを用意してブランチなどを切る予定です。<br />
         あとドキュメントとかもないです。<br />
-        <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a>
         <h2>開発者のブログ。</h2>
         ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
         なんかあったらここに書くかも。<br />

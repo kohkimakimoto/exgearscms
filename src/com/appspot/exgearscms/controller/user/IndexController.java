@@ -8,6 +8,7 @@ import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
 import com.appspot.exgearscms.controller.ApplicationController;
+import com.appspot.exgearscms.cool.util.Pager;
 import com.appspot.exgearscms.model.Article;
 import com.appspot.exgearscms.model.WebUser;
 import com.appspot.exgearscms.service.ArticleService;
@@ -33,8 +34,14 @@ public class IndexController extends ApplicationController {
             return redirect(uri + "/");
         }
 
-        List<Article> articleList = articleService.getArticleList(5, webUser);
-        requestScope("articleList", articleList);
+        int page = 1;
+        if (request.getAttribute("page") != null) {
+            page = Integer.valueOf((String)request.getAttribute("page"));
+        }
+
+        Pager<Article> pager = articleService.getArticleListWithPager(
+            page, 3, webUserService.getWebUser());
+        requestScope("pager", pager);
         requestScope("webUser", webUser);
 
         return forward("index.jsp");

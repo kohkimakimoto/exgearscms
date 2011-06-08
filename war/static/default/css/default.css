@@ -286,3 +286,13 @@ list-style: inside disc;
 .user-menu .mail{
 color: #888888;
 }
+
+.pager {
+padding: 10px 0 10px 0;
+text-align: right;
+}
+.pager .count {
+border: 1px solid #e1e1e1;
+padding: 3px 5px;
+background: #ffffff;
+}

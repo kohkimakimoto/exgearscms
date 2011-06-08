@@ -19,7 +19,7 @@
         ${f:h(webUser.myPageConfig.description)}
       </div>
     </div>
-    <c:forEach var="article" items="${articleList}" >
+    <c:forEach var="article" items="${pager.results}" >
       <div class="cbox1">
         <div class="inner">
           <h1>${f:h(article.title)}</h1>
@@ -33,6 +33,9 @@
         </div>
       </div>
     </c:forEach>
+    <c:import url="/_pager.jsp" >
+      <c:param name="page" value="${page}"/>
+    </c:import>
 
   </div>
 

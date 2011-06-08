@@ -10,6 +10,9 @@
   </div>
   <div class="content-right">
     <h1 class="h1-config">ユーザ設定</h1>
+    <div class="description">
+      プロフィール画像にはGravatarを利用します。利用するには<a target="_blank" href="http://gravatar.com/">http://gravatar.com</a>でアカウント登録してください。
+    </div>
     <c:import url="/admin/_messages.jsp" />
     <div class="form-wrapper">
       <form action="/admin/config/webuser" method="post">
@@ -29,7 +32,6 @@
         <label>Gravatar<br />アカウントメール</label>
         <div class="input">
           <input class="text" type="text" ${f:text("gravatarEmail")} /><br />
-          <span style="font-size: 80%;">※プロフィール画像にGravatarを利用します<a target="_blank" href="http://gravatar.com/">gravatar.com</a></span>
         </div>
         <div class="input">
           <img src="${user.profileImageUrl}" />
