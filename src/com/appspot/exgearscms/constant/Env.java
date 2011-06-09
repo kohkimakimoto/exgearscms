@@ -1,13 +1,13 @@
-package com.appspot.exgearscms.cool.util;
+package com.appspot.exgearscms.constant;
 
 /**
  * Constants settings
  * @author kouki
  *
  */
-public class Constants {
+public class Env {
 
-    private Constants() {
+    private Env() {
         super();
     }
 

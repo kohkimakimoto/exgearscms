@@ -1,6 +1,6 @@
 <%@page pageEncoding="UTF-8" isELIgnored="false" session="false"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
-<%@page import="com.appspot.exgearscms.cool.util.Constants"%>
+<%@page import="com.appspot.exgearscms.constant.Env"%>
 <div>
 <!-- tweet button -->
 <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
@@ -9,5 +9,5 @@
 </div>
 <div>
 <!-- hatebu button -->
-<a href="http://b.hatena.ne.jp/entry/<%=Constants.baseUrl%>${f:h(article.url)}" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<a href="http://b.hatena.ne.jp/entry/<%=Env.baseUrl%>${f:h(article.url)}" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 </div>

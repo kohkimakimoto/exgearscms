@@ -40,7 +40,7 @@ public class IndexController extends ApplicationController {
         }
 
         Pager<Article> pager = articleService.getArticleListWithPager(
-            page, 3, webUserService.getWebUser());
+            page, 10, webUser);
         requestScope("pager", pager);
         requestScope("webUser", webUser);
 
