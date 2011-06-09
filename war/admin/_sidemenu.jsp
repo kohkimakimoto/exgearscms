@@ -7,7 +7,9 @@ String path = (String)request.getAttribute("location");
 %>
 <div class="sidemenu"><div class="inner">
 <ul>
+<!--
   <li class="root"><a class="dashboard <% if (path.equals("/admin/")) out.print("on");%>" href="/admin/">ダッシュボード</a></li>
+ -->
   <li class="root"><a class="article <% if (path.indexOf("/admin/article/") != -1) out.print("on");%>" href="/admin/article/">記事</a>
     <% if (path.indexOf("/admin/article/") != -1) { %>
     <ul class="child">

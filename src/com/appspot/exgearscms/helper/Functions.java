@@ -21,7 +21,7 @@ public class Functions {
         return input.substring(0, length) + suffix;
     }
 
-    
+
     /**
      * Return formated date string
      * @param date
@@ -31,7 +31,7 @@ public class Functions {
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
         return df.format(date);
     }
-    
+
     public static String wiki(String input) {
         StringBuffer ret = new StringBuffer();
         String str = org.slim3.jsp.Functions.h(input);

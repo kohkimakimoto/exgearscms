@@ -8,11 +8,10 @@ import org.slim3.controller.Navigation;
 public class IndexController extends Controller {
 
     private static final Logger logger = Logger.getLogger(IndexController.class.getName());
-    
+
     @Override
     public Navigation run() throws Exception {
-        logger.info("admin access.");
-        
-        return forward("index.jsp");
+
+        return redirect("/admin/article/");
     }
 }
