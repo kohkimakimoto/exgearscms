@@ -82,7 +82,6 @@ public class ArticleService {
         pager.setPage(page);
         pager.init();
 
-        meta.key.greaterThan(Datastore.createKey(Article.class, 1));
         return pager;
     }
 

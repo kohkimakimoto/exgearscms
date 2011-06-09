@@ -36,6 +36,8 @@ public class Functions {
         StringBuffer ret = new StringBuffer();
         String str = org.slim3.jsp.Functions.h(input);
 
+        Pattern patternA = Pattern.compile("^(https?://.+)");
+
         String lines[] = str.split("\r\n");
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i].trim();
@@ -48,6 +50,11 @@ public class Functions {
             if (line.indexOf("*") == 0) {
                 ret.append(htmlh2(line));
                 continue;
+            }
+
+            Matcher matcher =  patternA.matcher(line);
+            if (matcher.matches()) {
+                line = htmla(matcher);
             }
 
             if (line.length() > 0) {
@@ -79,6 +86,11 @@ public class Functions {
 
     private static String htmlbr() {
         return "<br />";
+    }
+
+    private static String htmla(Matcher matcher) {
+        String str = matcher.group();
+        return matcher.replaceAll("<a href=" + str +">" + str + "</a>");
     }
 
 }

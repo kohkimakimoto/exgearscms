@@ -1,22 +1,28 @@
-<!-- Indices written at Thu, 9 Jun 2011 13:55:19 UTC -->
+<!-- Indices written at Thu, 9 Jun 2011 14:58:37 UTC -->
 
 <datastore-indexes>
 
-    <!-- Used 2 times in query history -->
+    <!-- Used 12 times in query history -->
     <datastore-index kind="WebUser" ancestor="false" source="auto">
         <property name="__key__" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 6 times in query history -->
+    <!-- Used 82 times in query history -->
     <datastore-index kind="Article" ancestor="false" source="auto">
         <property name="webUserRef" direction="asc"/>
         <property name="createdAt" direction="desc"/>
     </datastore-index>
 
-    <!-- Used 1 time in query history -->
+    <!-- Used 17 times in query history -->
     <datastore-index kind="Widget" ancestor="false" source="auto">
         <property name="webUserRef" direction="asc"/>
         <property name="dispOrder" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 10 times in query history -->
+    <datastore-index kind="Article" ancestor="false" source="auto">
+        <property name="webUserRef" direction="asc"/>
+        <property name="createdAt" direction="asc"/>
     </datastore-index>
 
 </datastore-indexes>
