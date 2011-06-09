@@ -52,7 +52,7 @@
             <li>
               <a style="font-weight: bold;" href="/${article.webUser.uid}/">${article.webUser.uid}</a>
               <a href="${article.url}">${f:h(article.title)}</a>
-              <span>${article.createdAt}</span>
+              <span>${func:d(article.createdAt)}</span>
             </li>
           </c:forEach>
         </ul>
