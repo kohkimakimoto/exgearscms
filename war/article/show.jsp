@@ -17,7 +17,7 @@
       <div class="inner">
         <h1>${f:h(article.title)}</h1>
          <div style="padding-bottom: 10px;">
-           ${article.createdAt}
+           ${func:d(article.createdAt)}
          </div>
          <div style="padding-bottom: 10px;">
            <c:import url="/article/_tools.jsp" />

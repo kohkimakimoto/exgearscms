@@ -48,7 +48,7 @@
   </div></div>
 </div>
 <div class="footer-wrap"><div class="footer">
-  <p>"ExGearsCMS" developed by kohki makimoto. Powered by Google App Engine for Java.</p>
+  <p>"ExGearsCMS" developed by kohki makimoto. Powered by Google App Engine for Java and slim3 MVC framework.</p>
   <p>"ExGearsCMS" is a open source software licensed "Apache License 2.0".</p>
   <p><a href="/p/terms">利用規約</a></p>
 </div></div>

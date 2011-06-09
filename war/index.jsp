@@ -34,11 +34,11 @@
         ソースは公開しているのでほしい人はGitHubからダウンロードしてください。ライセンスはApache License 2.0です。<br />
         <a href="https://github.com/kohkimakimoto/exgearscms">https://github.com/kohkimakimoto/exgearscms</a><br />
         <br />
-        <span style="font-weight: bold; color: red;">(注意)</span>いまのところこのサイトで動作させているソースコードをそのままコミットしていますのでご注意ください。ベースURLの設定がhttp://exegearscms.appspot.comになっていたりするので、利用する場合は適宜書き換える必要があります。<br />
+        <span style="font-weight: bold; color: red;">(注意)</span>いまのところこのサイトで動作させているソースコードをほぼそのままコミットしていますのでご注意ください。ベースURLの設定がhttp://exegearscms.appspot.comになっていたりするので、別のドメインで利用する場合は適宜書き換える必要があります。<br />
         いずれ汎用的に使えるバージョンを用意してブランチなどを切る予定です。<br />
         あとドキュメントとかもないです。<br />
         <h2>開発者のブログ。</h2>
-        ExGearsCMSは@kohkimakimotoが個人で開発してます。<br />
+        ExGearsCMSはkohkimakimotoが個人で開発してます。<br />
         なんかあったらここに書くかも。<br />
         <a href="http://exgearscms.appspot.com/kohkimakimoto/">http://exgearscms.appspot.com/kohkimakimoto/</a>
       </div>

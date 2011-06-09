@@ -1,5 +1,7 @@
 package com.appspot.exgearscms.helper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +21,17 @@ public class Functions {
         return input.substring(0, length) + suffix;
     }
 
+    
+    /**
+     * Return formated date string
+     * @param date
+     * @return
+     */
+    public static String d(Date date) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        return df.format(date);
+    }
+    
     public static String wiki(String input) {
         StringBuffer ret = new StringBuffer();
         String str = org.slim3.jsp.Functions.h(input);

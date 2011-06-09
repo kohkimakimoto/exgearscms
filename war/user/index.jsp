@@ -24,7 +24,7 @@
         <div class="inner">
           <h1>${f:h(article.title)}</h1>
           <div style="padding-bottom: 10px;">
-            ${article.createdAt}
+            ${func:d(article.createdAt)}
           </div>
           ${func:wiki(func:truncate(article.text, 300, "..."))}
           <div>
