@@ -4,7 +4,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="f" uri="http://www.slim3.org/functions"%>
 <%@taglib prefix="func" uri="/helper/functions"%>
-<c:import url="/layout/default.jsp">
+<c:import url="/layout/default_article.jsp">
 <c:param name="title" value="${f:h(article.title)} | ${f:h(article.webUser.myPageConfig.title)}"/>
 <c:param name="content" >
   <div class="content-top">
