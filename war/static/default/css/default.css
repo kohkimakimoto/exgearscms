@@ -175,6 +175,8 @@ margin-right: 4px;
 text-decoration: none;
 }
 
+.scbox1 ul li {list-style: disc inside none;}
+
 .prev {
 text-align: left;
 float: left;

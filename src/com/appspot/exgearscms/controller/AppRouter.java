@@ -20,7 +20,10 @@ public class AppRouter extends RouterImpl {
 
         addRoutingToUser("/{uid}", "/user/?uid={uid}");
         addRoutingToUser("/{uid}/", "/user/?uid={uid}");
+        addRoutingToUser("/{uid}/rss", "/user/rss?uid={uid}");
+
         addRoutingToUser("/{uid}/article/{id}", "/article/show?uid={uid}&id={id}");
+
         addRoutingToUser("/{uid}/*path", "/{path}?uid={uid}");
     }
 

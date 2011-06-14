@@ -10,7 +10,7 @@
 <meta name="keywords" content="Google App Engine,CMS,クラウドCMS,Java" lang="ja" xml:lang="ja" />
 <meta name="description" content="ExGearsCMSはGoogle App Engineで動作するクラウドCMSです。" lang="ja" xml:lang="ja" />
 <link rel="stylesheet" href="/static/default/css/default.css" type="text/css" media="all" />
-<link rel="alternate" type="application/rss+xml" title="ExGearsCMS &raquo; フィード" href="<%=Env.baseUrl%>/feed" />
+<link rel="alternate" type="application/rss+xml" title="ExGearsCMS &raquo; フィード" href="<%=Env.baseUrl%>/rss" />
 <script type="text/javascript" src="/static/default/js/jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="/static/default/js/jquery-ui-1.8.7.custom.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/static/default/js/jquery.plugin.js"></script>

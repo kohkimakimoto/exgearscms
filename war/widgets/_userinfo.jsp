@@ -23,6 +23,9 @@ pageContext.setAttribute("webUser", webUser);
       <img style="float: left; margin: 0 10px 10px 0;" src="${webUser.profileImageUrl}" />
       <a href="${webUser.url}">${webUser.uid}</a><br />
       <span style="color: #8e8e8e;">${f:h(webUser.webUserConfig.nickname)}</span>
+      <div>
+      <a href="/${f:h(context.user.uid)}/rss">RSS</a>
+      </div>
     </div>
     <div style="clear: both;">
         ${f:h(webUser.webUserConfig.profile)}
