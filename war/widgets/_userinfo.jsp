@@ -24,7 +24,7 @@ pageContext.setAttribute("webUser", webUser);
       <a href="${webUser.url}">${webUser.uid}</a><br />
       <span style="color: #8e8e8e;">${f:h(webUser.webUserConfig.nickname)}</span>
       <div>
-      <a href="/${f:h(context.user.uid)}/rss">RSS</a>
+      <a href="/${f:h(context.user.uid)}/rss">RSS</a>(←作成中)
       </div>
     </div>
     <div style="clear: both;">
