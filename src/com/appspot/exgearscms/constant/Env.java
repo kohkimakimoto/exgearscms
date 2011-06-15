@@ -1,7 +1,7 @@
 package com.appspot.exgearscms.constant;
 
 /**
- * Constants settings
+ * Environment variables settings
  * @author kouki
  *
  */
@@ -14,5 +14,7 @@ public class Env {
     public static final String baseUrl = "http://exgearscms.appspot.com";
 
     public static final String disqusShortName = "exgearscms";
+
+    public static final String[] designArray = {"default", "coolblack", "nekoneko"};
 
 }
