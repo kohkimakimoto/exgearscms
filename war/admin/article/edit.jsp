@@ -11,39 +11,44 @@
   <div class="content-right">
     <h1 class="h1-content">記事を編集</h1>
     <c:import url="/admin/_messages.jsp" />
-    <div class="form-post-wrapper">
-      <form action="/admin/article/edit?id=${f:h(article.key.id)}" method="post">
-      <h2 class="section-title">記事</h2>
-      <div class="record">
-       <ul class="error">
-         <c:forEach var="e" items="${f:errors()}">
-           <li>${f:h(e)}</li>
-         </c:forEach>
-       </ul>
-      </div>
-      <div class="record">
-        <label>タイトル</label>
-        <div class="input">
-          <input class="text" type="text" ${f:text("title")} />
-        </div>
-      </div>
-      <div class="record">
-        <label>記事本文</label>
-        <div class="input">
-          <textarea name="text">${f:h(text)}</textarea>
-        </div>
-      </div>
-      <div class="action">
-        <input type="submit" value="保存する"/>
-      </div>
-      </form>
+    <div style="position: relative;">
+      <div class="form-post-wrapper has-right-column">
 
-      <form action="/admin/article/delete?id=${f:h(article.key.id)}" method="post">
-      <div class="action">
-        <input type="submit" value="削除する"/>
+        <form action="/admin/article/edit?id=${f:h(article.key.id)}" method="post">
+        <h2 class="section-title">記事</h2>
+        <div class="record">
+         <ul class="error">
+           <c:forEach var="e" items="${f:errors()}">
+             <li>${f:h(e)}</li>
+           </c:forEach>
+         </ul>
+        </div>
+        <div class="record">
+          <label>タイトル</label>
+          <div class="input">
+            <input class="text" type="text" ${f:text("title")} />
+          </div>
+        </div>
+        <div class="record">
+          <label>記事本文</label>
+          <div class="input">
+            <textarea name="text">${f:h(text)}</textarea>
+          </div>
+        </div>
+        <div class="action">
+          <input type="submit" value="保存する"/>
+        </div>
+        </form>
+
+        <form action="/admin/article/delete?id=${f:h(article.key.id)}" method="post">
+        <div class="action">
+          <input type="submit" value="削除する"/>
+        </div>
+        </form>
       </div>
-      </form>
+      <c:import url="/admin/article/_wikisyntax.jsp" />
     </div>
+
   </div>
 </c:param>
 </c:import>

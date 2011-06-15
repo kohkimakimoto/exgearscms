@@ -316,8 +316,9 @@ font-size: 12px;
 .body-admin .content .section-title {
 font-weight: normal;
 padding: 0 0 5px 0;
-font-size: 17px;
-color: #7B9726;
+font-size: 13px;
+font-weight: bold;
+color: #111122;
 }
 
 
@@ -377,11 +378,6 @@ padding: 10px;
 
 .body-admin .content .cbox5 {
 border: 1px solid #e2e2e2;
-background: -moz-linear-gradient(top, #eefeff, #ffffff 50%, #ffffff);
-background: -webkit-gradient(linear, left top, left bottom, from(#eefeff),color-stop(50%, #ffffff), to(#ffffff));
-border-radius: 3px;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
 margin-bottom: 10px;
 }
 
@@ -521,13 +517,22 @@ padding: 0 0 20px 160px;
 }
 
 
-
 .body-admin .content .form-post-wrapper {
 border-top: 1px solid #d3d3d3;
 border-bottom: 1px solid #d3d3d3;
-
 background: #ffffff;
 margin-bottom: 10px;
+}
+
+.body-admin .content .has-right-column {
+margin-right: 260px;
+}
+
+.body-admin .content .right-column {
+width: 250px;
+position: absolute;
+top: 0;
+right: 0;
 }
 
 .body-admin .content .form-post-wrapper h2.section-title{
@@ -554,7 +559,7 @@ margin: 2px 0 0 0;
 }
 
 .body-admin .content .form-post-wrapper .record div.input input.text {
-width: 520px;
+width: 95%;
 background: url('../images/common/input_back.gif') repeat-x top left #ffffff;
 padding: 5px 5px;
 border: 1px solid #b1b1b1;
