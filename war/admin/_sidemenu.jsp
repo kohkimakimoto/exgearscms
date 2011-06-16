@@ -41,7 +41,9 @@ String path = (String)request.getAttribute("location");
     <ul class="child">
       <li><a class="<% if (path.equals("/admin/config/mypage")) out.print("on");%>" href="/admin/config/mypage">マイページ設定</a></li>
       <li><a class="<% if (path.equals("/admin/config/webuser")) out.print("on");%>" href="/admin/config/webuser">ユーザ設定</a></li>
+<!--
       <li><a class="<% if (path.equals("/admin/config/design")) out.print("on");%>" href="/admin/config/design">デザイン設定</a></li>
+-->
     </ul>
     <% }%>
   </li>
