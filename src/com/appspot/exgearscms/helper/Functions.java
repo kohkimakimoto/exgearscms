@@ -39,34 +39,53 @@ public class Functions {
         Pattern patternA = Pattern.compile("^(https?://.+)");
 
         String lines[] = str.split("\r\n");
-        for (int i = 0; i < lines.length; i++) {
-            String line = lines[i].trim();
 
-            if (line.indexOf("**") == 0) {
+        boolean pretag = false;
+
+        for (int i = 0; i < lines.length; i++) {
+
+            String line = lines[i];
+            if (!pretag) {
+                line.trim();
+            }
+
+            if (line.indexOf("**") == 0 && !pretag) {
                 ret.append(htmlh3(line));
                 continue;
             }
 
-            if (line.indexOf("*") == 0) {
+            if (line.indexOf("*") == 0 && !pretag) {
                 ret.append(htmlh2(line));
                 continue;
             }
 
+            if (line.indexOf("&lt;pre&gt;") == 0) {
+                ret.append(htmlpre(line));
+                pretag = true;
+                continue;
+            }
+
+            if (line.indexOf("&lt;/pre&gt;") == 0) {
+                ret.append(htmlpreclose(line));
+                pretag = false;
+                continue;
+            }
+
             Matcher matcher =  patternA.matcher(line);
-            if (matcher.matches()) {
+            if (matcher.matches() && !pretag) {
                 line = htmla(matcher);
             }
 
-            if (line.length() > 0) {
+            if (line.length() > 0 && !pretag) {
                 ret.append(htmlp(line));
                 continue;
             }
 
-            if (line.length() == 0) {
+            if (line.length() == 0 && !pretag) {
                 ret.append(htmlbr());
                 continue;
             }
-            ret.append(line);
+            ret.append(line + "\n");
         }
 
         return ret.toString();
@@ -82,6 +101,14 @@ public class Functions {
 
     private static String htmlp(String str) {
         return "<p>" + str + "</p>\n";
+    }
+
+    private static String htmlpre(String str) {
+        return str.replaceAll("&lt;pre&gt;", "<pre>");
+    }
+
+    private static String htmlpreclose(String str) {
+        return str.replaceAll("&lt;/pre&gt;", "</pre>");
     }
 
     private static String htmlbr() {

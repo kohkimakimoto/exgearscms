@@ -19,7 +19,7 @@
       <h2 class="section-title">設定</h2>
         <div style="float: left; width: 200px;">
         <ul style="border: 1px solid #eeeeee; padding: 10px; margin-bottom: 20px;">
-          <li style="padding: 5px 0;">デザイン一覧</li>
+          <li style="padding: 5px 0;">デザインテーマ一覧(超開発中。まだつかえませんよ)</li>
           <c:forEach var="var" items="${designArray}">
             <li style="padding: 5px 0;"><a href="#">${f:h(var)}</a></li>
           </c:forEach>

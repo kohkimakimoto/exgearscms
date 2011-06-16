@@ -33,6 +33,12 @@ a {color: #4444ff;}
 ul.error li {
 color: #ff0000;
 }
+pre {
+border: 1px solid #C7DEFF;
+padding: 10px;
+background: #F4F7F9;
+
+}
 
 .container {
 background: url("../images/common/back.png") repeat-x top left #ededed;
